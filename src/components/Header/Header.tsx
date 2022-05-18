@@ -37,7 +37,7 @@ const Header = () => {
         <Divider className={styles.superPuperDivider} />
         <div>
           <Menu
-            onClick={(e) => navigate(`/js`)}
+            onClick={(e) => navigate(e.key)}
             //selectedKeys={[current]}
             mode="horizontal"
             items={menuStructure}

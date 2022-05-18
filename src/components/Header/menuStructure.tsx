@@ -20,7 +20,7 @@ const menuStructure = [
       },
       {
         label: "Вопросы",
-        key: "JSQuestions",
+        key: "/js/JsQuestions",
       },
       {
         label: "Рекомендации",

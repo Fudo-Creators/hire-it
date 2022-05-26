@@ -9,9 +9,9 @@ const Questions = (props: any) => {
       {props.questions.map((item: any) => {
         return (
           <>
-            <div>{item.questionTitle}</div>
+            <div>{item.title}</div>
             <SyntaxHighlighter language="javascript" style={darcula}>
-              {item.questionCode}
+              {item.code}
             </SyntaxHighlighter>
             <div>Возможные ответы:{item.answers}</div>
             <details>

@@ -9,7 +9,9 @@ const jsQuestions = () => {
     },
   ];
   return (
-    <Questions questions={JsQuestions}/>
-  )
+    <div className="">
+      <Questions questions={JsQuestions} />
+    </div>
+  );
 };
 export default jsQuestions;

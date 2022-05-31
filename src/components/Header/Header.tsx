@@ -1,4 +1,5 @@
 import { Divider, Image, Menu } from "antd";
+import { useNavigate } from "react-router-dom";
 //@ts-ignore
 import styles from "../Header/Header.module.sass";
 //@ts-ignore
@@ -8,7 +9,8 @@ import "antd/dist/antd.css";
 import { useState } from "react";
 
 const Header = () => {
-  //const [current, setCurrent] = useState("mail");
+  let navigate = useNavigate();
+  //co[current, setCurrent] = useState("mail");
   return (
     <>
       <header>
@@ -35,7 +37,7 @@ const Header = () => {
         <Divider className={styles.superPuperDivider} />
         <div>
           <Menu
-            onClick={(e) => console.log("onLick", e.key)}
+            onClick={(e) => navigate(e.key)}
             //selectedKeys={[current]}
             mode="horizontal"
             items={menuStructure}
@@ -44,5 +46,5 @@ const Header = () => {
       </header>
     </>
   );
-};
+};;;
 export default Header;

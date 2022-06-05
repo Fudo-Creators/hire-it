@@ -18,8 +18,8 @@ root.render(
     <BrowserRouter>
       <Routes>
         <Route path="/" element={<App />} />
-        <Route path="/js" element={<Js />} />
-        <Route path="/js/JsQuestions" element={<JsTasks />} />
+        <Route path="/js/JsQuestions" element={<Js />} />
+        <Route path="/js/JsTasks" element={<JsTasks />} />
         <Route path="/ts" element={<Ts />} />
         <Route path="/react" element={<ReactJs />} />
         <Route path="/vue" element={<VueJs />} />

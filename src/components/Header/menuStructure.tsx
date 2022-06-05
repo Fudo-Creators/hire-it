@@ -16,7 +16,7 @@ const menuStructure = [
     children: [
       {
         label: "Задачи",
-        key: "JSTasks",
+        key: "/js/JSTasks",
       },
       {
         label: "Вопросы",
@@ -24,7 +24,7 @@ const menuStructure = [
       },
       {
         label: "Рекомендации",
-        key: "JSRecomendations",
+        key: "/js/JSRecomendations",
       },
     ],
   },

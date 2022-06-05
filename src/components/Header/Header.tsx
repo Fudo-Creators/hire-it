@@ -5,7 +5,7 @@ import styles from "../Header/Header.module.sass";
 //@ts-ignore
 import mainLogo from "../../resources/logo/HI-IT.png";
 import menuStructure from "./menuStructure";
-import "antd/dist/antd.css";
+import "antd/dist/antd.min.css";
 import { useState } from "react";
 
 const Header = () => {

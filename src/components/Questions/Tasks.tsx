@@ -3,9 +3,7 @@ import { useEffect, useState } from "react";
 import SyntaxHighlighter from "react-syntax-highlighter";
 import { darcula } from "react-syntax-highlighter/dist/esm/styles/hljs";
 import { notification, Spin } from "antd";
-//@ts-ignore
 import styles from "../Questions/Question.module.sass";
-//import styles from "../Header/Header.module.sass";
 type NotificationType = "success" | "info" | "warning" | "error";
 
 const Questions = (props: any) => {
@@ -15,7 +13,6 @@ const Questions = (props: any) => {
   const [loading, isLoading] = useState<boolean>(false);
   const [ban, setBan] = useState<boolean>(false);
   const [success, setSuccess] = useState<boolean>(true);
-  //const [checked, setChecked] = useState<boolean>(false);
 
   useEffect(() => {
     isLoading(true);
@@ -72,9 +69,11 @@ const Questions = (props: any) => {
               {answers.map((text: string) => {
                 return (
                   <Radio
-                    onClick={(
-                      e //@ts-ignore
-                    ) => (key !== e.target.value ? failed() : congrat())}
+                    onClick={(e) =>
+                      key !== (e.target as HTMLInputElement).value
+                        ? failed()
+                        : congrat()
+                    }
                     disabled={ban}
                     value={text}
                   >

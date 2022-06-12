@@ -1,6 +1,6 @@
 import Container from "../../../../components/Container/Container";
 import Header from "../../../../components/Header/Header";
-import Questions from "../../../../components/Questions/Tasks";
+import Task from "../../../../components/Task/Task";
 const JsTasks = () => {
   const JsTasks = [
     // источник: https://github.com/lydiahallie/javascript-questions/blob/master/ru-RU/README.md
@@ -183,7 +183,7 @@ const JsTasks = () => {
       <Container>
         <h1>Желаю удачи!</h1>
         {JsTasks.map((item, index) => {
-          return <Questions index={index} questions={item} />;
+          return <Task index={index} questions={item} />;
         })}
       </Container>
     </>

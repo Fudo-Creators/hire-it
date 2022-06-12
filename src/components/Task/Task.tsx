@@ -3,10 +3,10 @@ import { useEffect, useState } from "react";
 import SyntaxHighlighter from "react-syntax-highlighter";
 import { darcula } from "react-syntax-highlighter/dist/esm/styles/hljs";
 import { notification, Spin } from "antd";
-import styles from "../Questions/Question.module.sass";
+import styles from "../Task/Task.module.sass";
 type NotificationType = "success" | "info" | "warning" | "error";
 
-const Questions = (props: any) => {
+const Task = (props: any) => {
   const { title, code, answers, key, spoiler } = props.questions;
   const { index } = props;
   const [value, setValue] = useState<string>();
@@ -41,8 +41,6 @@ const Questions = (props: any) => {
     setSuccess(false);
     return failNotify("error");
   };
-  console.log(props);
-
   return (
     <>
       {!loading ? (
@@ -58,7 +56,7 @@ const Questions = (props: any) => {
           }
         >
           <>
-            <div className={styles.headQuestion}>
+            <div className="text-sky-500 dark:text-sky-400">
               <div>{title}</div> <div>№{index + 1}</div>
             </div>
             <SyntaxHighlighter language="javascript" style={darcula}>
@@ -100,4 +98,4 @@ const Questions = (props: any) => {
     </>
   );
 };
-export default Questions;
+export default Task;

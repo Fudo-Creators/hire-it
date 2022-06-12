@@ -16,15 +16,15 @@ const menuStructure = [
     children: [
       {
         label: "Задачи",
-        key: "/js/JSTasks",
+        key: "/JSTasks",
       },
       {
         label: "Вопросы",
-        key: "/js/JsQuestions",
+        key: "/JSQuestions",
       },
       {
         label: "Рекомендации",
-        key: "/js/JSRecomendations",
+        key: "/JSRecomendations",
       },
     ],
   },

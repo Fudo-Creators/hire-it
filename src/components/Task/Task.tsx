@@ -1,8 +1,14 @@
-import { Radio, RadioChangeEvent } from "antd";
+import {
+  Radio,
+  RadioChangeEvent,
+  Spin,
+  notification,
+  Collapse,
+  Card,
+} from "antd";
 import { useEffect, useState } from "react";
 import SyntaxHighlighter from "react-syntax-highlighter";
 import { darcula } from "react-syntax-highlighter/dist/esm/styles/hljs";
-import { notification, Spin } from "antd";
 import styles from "../Task/Task.module.sass";
 type NotificationType = "success" | "info" | "warning" | "error";
 
@@ -41,12 +47,15 @@ const Task = (props: any) => {
     setSuccess(false);
     return failNotify("error");
   };
+
+  const { Panel } = Collapse;
+
   return (
     <>
       {!loading ? (
         <Spin />
       ) : (
-        <div
+        <Card
           className={
             ban && !success
               ? styles.wrapper__failed
@@ -62,7 +71,6 @@ const Task = (props: any) => {
             <SyntaxHighlighter language="javascript" style={darcula}>
               {code}
             </SyntaxHighlighter>
-            {/* <div>Возможные ответы:{item.answers}</div> */}
             <Radio.Group onChange={onChange} value={value}>
               {answers.map((text: string) => {
                 return (
@@ -81,19 +89,22 @@ const Task = (props: any) => {
               })}
             </Radio.Group>
             {ban && (
-              <details>
+              <Collapse collapsible="header">
                 <summary>Правильный ответ:</summary>
-                <p>{key}</p>
-                {spoiler && (
-                  <details>
-                    <summary>Подробнее:</summary>
-                    <p>{spoiler}</p>
-                  </details>
-                )}
-              </details>
+                <Panel header="Правильный ответ" key={key}>
+                  <p>{key}</p>
+                  {spoiler && (
+                    <Collapse collapsible="header">
+                      <Panel header="Почему так?:)" key={key + 1}>
+                        <p>{spoiler}</p>
+                      </Panel>
+                    </Collapse>
+                  )}
+                </Panel>
+              </Collapse>
             )}
           </>
-        </div>
+        </Card>
       )}
     </>
   );

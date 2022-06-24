@@ -1,6 +1,7 @@
 import Container from "../../../../components/Container/Container";
 import Header from "../../../../components/Header/Header";
 import Task from "../../../../components/Task/Task";
+import { Col, Divider, Row } from "antd";
 const JsTasks = () => {
   const JsTasks = [
     // источник: https://github.com/lydiahallie/javascript-questions/blob/master/ru-RU/README.md
@@ -176,15 +177,35 @@ const JsTasks = () => {
     //   spoiler: ``,
     // },
   ];
+  const loader = (
+    <div key="loader" className="loader">
+      Loading ...
+    </div>
+  );
 
   return (
     <>
       <Header />
       <Container>
-        <h1>Желаю удачи!</h1>
-        {JsTasks.map((item, index) => {
-          return <Task index={index} questions={item} />;
-        })}
+        <>
+          <h1>Желаю удачи!</h1>
+          <Row
+            gutter={{
+              xs: 8,
+              sm: 16,
+              md: 24,
+              lg: 32,
+            }}
+          >
+            {JsTasks.map((item, index) => {
+              return (
+                <Col className="gutter-row" span={8}>
+                  <Task index={index} questions={item} />
+                </Col>
+              );
+            })}
+          </Row>
+        </>
       </Container>
     </>
   );

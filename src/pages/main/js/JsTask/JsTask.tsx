@@ -189,17 +189,10 @@ const JsTasks = () => {
       <Container>
         <>
           <h1>Желаю удачи!</h1>
-          <Row
-            gutter={{
-              xs: 8,
-              sm: 16,
-              md: 24,
-              lg: 32,
-            }}
-          >
+          <Row gutter={[32, 32]}>
             {JsTasks.map((item, index) => {
               return (
-                <Col className="gutter-row" span={8}>
+                <Col className="gutter-row" span={10}>
                   <Task index={index} questions={item} />
                 </Col>
               );

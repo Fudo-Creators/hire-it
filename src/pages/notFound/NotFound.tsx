@@ -1,5 +1,4 @@
 import Container from "../../components/Container/Container";
-import Header from "../../components/Header/Header";
 import { useLocation } from "react-router-dom";
 import { Image } from "antd";
 const NotFound = () => {
@@ -7,7 +6,6 @@ const NotFound = () => {
 
   return (
     <>
-      <Header />
       <Container>
         <h1>И что это мы тут делаем? </h1>
         <h2>

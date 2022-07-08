@@ -1,5 +1,4 @@
 import Container from "../../../../components/Container/Container";
-import Header from "../../../../components/Header/Header";
 import Question from "../../../../components/Question/Question";
 const JsQuestions = () => {
   const JsQuestions = [
@@ -17,7 +16,6 @@ const JsQuestions = () => {
 
   return (
     <>
-      <Header />
       <Container>
         <h1>Желаю удачи!</h1>
         {JsQuestions.map((item, index) => {

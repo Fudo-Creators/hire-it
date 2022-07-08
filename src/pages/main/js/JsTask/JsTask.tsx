@@ -1,5 +1,4 @@
 import Container from "../../../../components/Container/Container";
-import Header from "../../../../components/Header/Header";
 import Task from "../../../../components/Task/Task";
 const JsTasks = () => {
   const JsTasks = [
@@ -179,7 +178,6 @@ const JsTasks = () => {
 
   return (
     <>
-      <Header />
       <Container>
         <h1>Желаю удачи!</h1>
         {JsTasks.map((item, index) => {

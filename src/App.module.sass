@@ -4,6 +4,10 @@ $content-dark: rgba(64, 64, 64, 1) !important
 $light-dark: rgba(71, 71, 71, 1) !important
 
 .header
+    background: $light-dark
+    position: relative
+
+.header__menu
     margin: 15px 16px 25px 20px
     padding-bottom: 10px
     border-bottom: 1px solid white
@@ -12,13 +16,25 @@ $light-dark: rgba(71, 71, 71, 1) !important
 .sider
     background: $sider-dark
     overflow: auto
+    width: 335px
+
 .content
     background: $content-dark
+
 .font
     color: white
-    font-size: 25px
+    font-size: 40px
+
 .wrapper 
     min-height: 100vh
+    font-size: 40px
 
 ul
     background: $sider-dark
+    border-bottom: none
+
+li
+    font-size: 25px
+    border-bottom: 2px solid
+li:last-child
+    border-bottom: none

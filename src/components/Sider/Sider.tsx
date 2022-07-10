@@ -1,6 +1,7 @@
 import { useCallback, useState } from "react";
 
 import { Layout, MenuProps } from "antd";
+
 import Menu from "../UI/Menu/Menu";
 import Image from "../UI/Image/Image";
 
@@ -10,19 +11,17 @@ import Tg from "../../resources/logo/tg.svg";
 
 import styles from "../../App.module.sass";
 
-import { items, mainKeysMenu } from "./Data.sider";
+import { items, mainKeysMenu } from "./Data.sider"; // Структура данных для сайд-бара.
 
 // Компонент бокового меню, благодаря ключам 1 порядка будет происходит редирект внутри приложения.
 
-const Sider = () => {
+const Sider: React.FC = () => {
   const { Sider } = Layout;
 
   const [openKeys, setOpenKeys] = useState(["javascript"]);
 
   const onOpenChange: MenuProps["onOpenChange"] = useCallback(
     (keys: any) => {
-      console.log("is callback", openKeys);
-
       const latestOpenKey = keys.find(
         (key: string) => openKeys.indexOf(key) === -1
       );
@@ -36,8 +35,8 @@ const Sider = () => {
   );
 
   return (
-    <Sider className={styles.sider}>
-      <header className={styles.header}>
+    <Sider width={335} className={styles.sider}>
+      <header className={styles.header__menu}>
         <h1 className={styles.font}>HIRE-IT</h1>
         <a href="https://github.com/Fudo-Creators">
           <Image

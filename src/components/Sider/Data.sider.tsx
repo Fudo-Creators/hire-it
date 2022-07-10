@@ -27,10 +27,6 @@ export const items: IItemsMenu[] = [
       {
         key: "jstask",
         label: "Задачи",
-        children: [
-          { key: "jsdonttouch", label: "Не решенные" },
-          { key: "jsgood", label: "Решенные" },
-        ],
       },
       { key: "jsquestion", label: "Вопросы" },
     ],
@@ -43,10 +39,6 @@ export const items: IItemsMenu[] = [
       {
         key: "tstask",
         label: "Задачи",
-        children: [
-          { key: "tsdonttouch", label: "Не решенные" },
-          { key: "tsgood", label: "Решенные" },
-        ],
       },
       { key: "tsquestion", label: "Вопросы" },
     ],
@@ -59,10 +51,6 @@ export const items: IItemsMenu[] = [
       {
         key: "reacttask",
         label: "Задачи",
-        children: [
-          { key: "reactdonttouch", label: "Не решенные" },
-          { key: "reactgood", label: "Решенные" },
-        ],
       },
       { key: "reactquestion", label: "Вопросы" },
     ],
@@ -75,10 +63,6 @@ export const items: IItemsMenu[] = [
       {
         key: "vuetask",
         label: "Задачи",
-        children: [
-          { key: "vuedonttouch", label: "Не решенные" },
-          { key: "vuegood", label: "Решенные" },
-        ],
       },
       { key: "vuequestion", label: "Вопросы" },
     ],
@@ -91,10 +75,6 @@ export const items: IItemsMenu[] = [
       {
         key: "angulartask",
         label: "Задачи",
-        children: [
-          { key: "angulardonttouch", label: "Не решенные" },
-          { key: "angulargood", label: "Решенные" },
-        ],
       },
       { key: "angularquestion", label: "Вопросы" },
     ],

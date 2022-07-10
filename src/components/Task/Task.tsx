@@ -1,8 +1,14 @@
-import { Radio, RadioChangeEvent } from "antd";
+import {
+  Radio,
+  RadioChangeEvent,
+  Spin,
+  notification,
+  Collapse,
+  Card,
+} from "antd";
 import { useEffect, useState } from "react";
 import SyntaxHighlighter from "react-syntax-highlighter";
 import { darcula } from "react-syntax-highlighter/dist/esm/styles/hljs";
-import { notification, Spin } from "antd";
 import styles from "../Task/Task.module.sass";
 type NotificationType = "success" | "info" | "warning" | "error";
 
@@ -41,12 +47,15 @@ const Task = (props: any) => {
     setSuccess(false);
     return failNotify("error");
   };
+
+  const { Panel } = Collapse;
+  const { Meta } = Card;
   return (
     <>
       {!loading ? (
         <Spin />
       ) : (
-        <div
+        <Card
           className={
             ban && !success
               ? styles.wrapper__failed
@@ -54,46 +63,49 @@ const Task = (props: any) => {
               ? !ban && styles.wrapper__default
               : success && styles.wrapper__success
           }
+          actions={[
+            <>
+              <Radio.Group onChange={onChange} value={value}>
+                {answers.map((text: string) => {
+                  return (
+                    <Radio
+                      onClick={(e) =>
+                        key !== (e.target as HTMLInputElement).value
+                          ? failed()
+                          : congrat()
+                      }
+                      disabled={ban}
+                      value={text}
+                    >
+                      {text}
+                    </Radio>
+                  );
+                })}
+              </Radio.Group>
+              {ban && (
+                <Collapse accordion>
+                  <Panel header="Правильный ответ" key={key}>
+                    <p>{key}</p>
+                    {spoiler && (
+                      <Collapse>
+                        <Panel header="Почему так?:)" key={key + 1}>
+                          <p>{spoiler}</p>
+                        </Panel>
+                      </Collapse>
+                    )}
+                  </Panel>
+                </Collapse>
+              )}
+            </>,
+          ]}
         >
           <>
-            <div className="text-sky-500 dark:text-sky-400">
-              <div>{title}</div> <div>№{index + 1}</div>
-            </div>
             <SyntaxHighlighter language="javascript" style={darcula}>
               {code}
             </SyntaxHighlighter>
-            {/* <div>Возможные ответы:{item.answers}</div> */}
-            <Radio.Group onChange={onChange} value={value}>
-              {answers.map((text: string) => {
-                return (
-                  <Radio
-                    onClick={(e) =>
-                      key !== (e.target as HTMLInputElement).value
-                        ? failed()
-                        : congrat()
-                    }
-                    disabled={ban}
-                    value={text}
-                  >
-                    {text}
-                  </Radio>
-                );
-              })}
-            </Radio.Group>
-            {ban && (
-              <details>
-                <summary>Правильный ответ:</summary>
-                <p>{key}</p>
-                {spoiler && (
-                  <details>
-                    <summary>Подробнее:</summary>
-                    <p>{spoiler}</p>
-                  </details>
-                )}
-              </details>
-            )}
+            <Meta title={title} />
           </>
-        </div>
+        </Card>
       )}
     </>
   );

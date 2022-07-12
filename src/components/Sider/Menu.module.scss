@@ -1,0 +1,111 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
+
+body {
+  background-color: rgb(25, 25, 25);
+  font-family: 'Poppins', sans-serif !important;
+}
+
+.sidebar {
+  // position: absolute;
+  background-color: #292929;
+  height: 100vh;
+  max-width: 335px;
+  width: 100%;
+  left: 0;
+  top: 0;
+  padding: 15px 0;
+  font-family: 'Poppins', sans-serif;
+  font-size: 20px;
+
+  &__top {
+    margin-bottom: 75px;
+    padding-left: 15px;
+
+    h1 {
+      font-size: 35px;
+      text-transform: uppercase;
+      font-weight: 500;
+      color: #fff;
+    }
+  }
+
+  &__menu {
+    display: flex;
+    flex-direction: column;
+
+    :global {
+      .ant-menu-submenu-inline {
+        border-bottom: none;
+
+        &:not(:last-child) {
+          margin-bottom: 30px;
+        }
+      }
+
+      .ant-menu-submenu-title {
+        display: flex;
+        align-items: center;
+        border-color: transparent;
+        position: relative;
+
+        &::after {
+          content: '';
+          width: 30px;
+          height: 1px;
+          bottom: -12px;
+          left: 10px;
+          background-color: #b0bec5;
+          position: absolute;
+        }
+      }
+
+      .ant-menu-title-content {
+        color: #ccc;
+        font-weight: 500;
+        font-size: 19px;
+        margin-left: 12px;
+      }
+    }
+  }
+
+  .ant-menu-title-content {
+    color: red;
+  }
+}
+
+.ant-tabs-nav {
+  display: none;
+}
+
+.links {
+  display: flex;
+
+  &__img {
+    cursor: pointer;
+    margin-right: 5px; //need to rewrite
+  }
+}
+
+.navigate {
+  &__home {
+    padding: 10px 0 10px 15px;
+    border-radius: 8px;
+    display: flex;
+    max-width: 280px;
+    width: 100%;
+    background-color: rgba(255, 255, 255, 0.1);
+    cursor: pointer;
+    position: relative;
+    margin-bottom: 55px;
+  }
+
+  &__home::after {
+    content: '';
+    position: absolute;
+    width: 295px;
+    height: 1px;
+    right: -9px;
+    bottom: -10px;
+    background-color: #b0bec5;
+  }
+}

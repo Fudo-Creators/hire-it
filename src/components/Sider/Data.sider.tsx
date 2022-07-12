@@ -22,7 +22,7 @@ export const items: IItemsMenu[] = [
   {
     key: "javascript",
     label: "JavaScript",
-    icon: <Image preview={false} width={60} height={40} src={JS} />,
+    icon: <Image preview={false} width={45} height={45} src={JS} />,
     children: [
       {
         key: "jstask",
@@ -34,7 +34,7 @@ export const items: IItemsMenu[] = [
   {
     key: "typescript",
     label: "TypeScript",
-    icon: <Image preview={false} width={60} height={40} src={TS} />,
+    icon: <Image preview={false} width={45} height={45} src={TS} />,
     children: [
       {
         key: "tstask",
@@ -46,7 +46,7 @@ export const items: IItemsMenu[] = [
   {
     key: "react",
     label: "React.JS",
-    icon: <Image preview={false} width={60} height={40} src={ReactJS} />,
+    icon: <Image preview={false} width={45} height={45} src={ReactJS} />,
     children: [
       {
         key: "reacttask",
@@ -58,7 +58,7 @@ export const items: IItemsMenu[] = [
   {
     key: "vue",
     label: "Vue.JS",
-    icon: <Image preview={false} width={60} height={40} src={VueJS} />,
+    icon: <Image preview={false} width={45} height={45} src={VueJS} />,
     children: [
       {
         key: "vuetask",
@@ -70,7 +70,7 @@ export const items: IItemsMenu[] = [
   {
     key: "angular",
     label: "Angular.JS",
-    icon: <Image preview={false} width={60} height={40} src={AngularJS} />,
+    icon: <Image preview={false} width={45} height={45} src={AngularJS} />,
     children: [
       {
         key: "angulartask",
@@ -82,6 +82,6 @@ export const items: IItemsMenu[] = [
   {
     key: "other",
     label: "Общее",
-    icon: <Image preview={false} width={60} height={40} src={Other} />,
+    icon: <Image preview={false} width={45} height={45} src={Other} />,
   },
 ];

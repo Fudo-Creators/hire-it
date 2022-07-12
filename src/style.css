@@ -1,0 +1,135 @@
+
+
+body {
+  background-color: rgb(25, 25, 25);
+  color: #fff;
+  font-family: 'Poppins', sans-serif;
+  position: relative;
+}
+
+.header {
+  background-color: #404040;
+  display: flex;
+  align-items: center;
+  padding: 0 20px;
+  height: 60px;
+}
+
+.account {
+  margin-left: auto;
+}
+
+.account__logo {
+  overflow: hidden;
+  border-radius: 5px;
+}
+
+.sidebar {
+  position: absolute;
+  background-color: #292929;
+  height: 100vh;
+  max-width: 335px;
+  width: 100%;
+  left: 0;
+  top: 0;
+  padding: 15px 0 0 15px;
+}
+
+.sidebar__top {
+  margin-bottom: 75px;
+}
+
+.logo {
+  font-size: 35px;
+  text-transform: uppercase;
+  font-weight: 500;
+}
+
+.link {
+  display: flex;
+}
+
+.link__item:not(:last-child) {
+  margin-right: 5px;
+}
+
+.navigate__home {
+  padding: 10px 0 10px 15px;
+  border-radius: 8px;
+  display: flex;
+  max-width: 280px;
+  width: 100%;
+  background-color: rgba(255, 255, 255, 0.1);
+  cursor: pointer;
+  position: relative;
+  margin-bottom: 55px;
+}
+
+.navigate__home::after {
+  content: '';
+  position: absolute;
+  width: 295px;
+  height: 1px;
+  right: -9px;
+  bottom: -10px;
+  background-color:  #B0BEC5;
+}
+
+.navigate__home-title {
+  margin-left: 5px;
+  text-transform: uppercase;
+  font-weight: 500;
+}
+
+.navigate__training-title {
+  color: rgba(204, 204, 204, 1);
+  font-size: 14px;
+  font-weight: 500;
+  margin-bottom: 12px;
+}
+
+.languages__item {
+  display: flex;
+  align-items: center;
+  cursor: pointer;
+  color: #ccc;
+  position: relative;
+}
+
+.languages__item:not(:last-child){
+  margin-bottom: 45px;
+}
+
+.languages__item::after {
+  content: '';
+  width: 30px;
+  height: 1px;
+  bottom: -12px;
+  left: -8px;
+  background-color: #B0BEC5;
+  position: absolute;
+}
+
+.languages__title {
+  font-weight: 500;
+  font-size: 19px;
+  margin-left: 15px;
+  color: inherit;
+}
+
+.languages__item--active {
+  color: #F78C6C;
+}
+
+.name {
+  position: absolute;
+  right: 50%;
+  top: 50%;
+  transform: translate(50%, 50%);
+  font-size: 100px;
+  z-index: 1;
+}
+
+.ant-menu-title-content {
+  color: red;
+}

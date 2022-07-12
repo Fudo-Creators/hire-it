@@ -9,6 +9,7 @@ import Image from '../UI/Image/Image';
 import Github from '../../resources/logo/github.svg';
 import Vk from '../../resources/logo/vk.svg';
 import Tg from '../../resources/logo/tg.svg';
+import homeSvg from '../../resources/logo/home.svg';
 
 import stylesh from '../../App.module.sass';
 
@@ -49,17 +50,27 @@ const Sider: React.FC = () => {
         </div>
       </div>
       <div>
-        
-        <div>
-          <Menu
-            // openKeys={openKeys}
-            // onOpenChange={onOpenChange}
-            onClick={(e) => console.log(e.key)}
-            className={style.sidebar__menu}
-            mode='inline'
-            items={items}
-          />
-        </div>
+        <nav className={style.navigate}>
+          <a href='/'>
+            <div className={style.navigate__home}>
+              <img src={homeSvg} alt='home svg' />
+              <span className={style.navigate__home_title}>home</span>
+            </div>
+          </a>
+
+          <div>
+            <span className={style.navigate__training_title}>training</span>
+
+            <Menu
+              openKeys={openKeys}
+              onOpenChange={onOpenChange}
+              onClick={(e) => console.log(e.key)}
+              className={style.sidebar__menu}
+              mode='inline'
+              items={items}
+            />
+          </div>
+        </nav>
       </div>
     </Sider>
   );

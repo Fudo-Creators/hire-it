@@ -4,7 +4,7 @@ import Image from "../UI/Image/Image";
 
 import JS from "../../resources/logo/languages/js.svg";
 import TS from "../../resources/logo/languages/ts.svg";
-import ReactJS from "../../resources/logo/languages/react.svg";
+import ReactJS from "../../resources/logo/languages/react2.svg";
 import VueJS from "../../resources/logo/languages/vue.svg";
 import AngularJS from "../../resources/logo/languages/angular.svg";
 import Other from "../../resources/logo/languages/other.svg";
@@ -26,9 +26,9 @@ export const items: IItemsMenu[] = [
     children: [
       {
         key: "jstask",
-        label: "Задачи",
+        label: "Tasks",
       },
-      { key: "jsquestion", label: "Вопросы" },
+      { key: "jsquestion", label: "Questions" },
     ],
   },
   {
@@ -38,50 +38,51 @@ export const items: IItemsMenu[] = [
     children: [
       {
         key: "tstask",
-        label: "Задачи",
+        label: "Tasks",
       },
-      { key: "tsquestion", label: "Вопросы" },
+      { key: "tsquestion", label: "Questions" },
     ],
   },
   {
     key: "react",
-    label: "React.JS",
+    label: "React",
     icon: <Image preview={false} width={45} height={45} src={ReactJS} />,
     children: [
       {
         key: "reacttask",
-        label: "Задачи",
+        label: "Tasks",
       },
-      { key: "reactquestion", label: "Вопросы" },
+      { key: "reactquestion", label: "Questions" },
     ],
   },
   {
     key: "vue",
-    label: "Vue.JS",
+    label: "Vue",
     icon: <Image preview={false} width={45} height={45} src={VueJS} />,
     children: [
       {
         key: "vuetask",
-        label: "Задачи",
+        label: "Tasks",
       },
-      { key: "vuequestion", label: "Вопросы" },
+      { key: "vuequestion", label: "Questions" },
     ],
   },
   {
     key: "angular",
-    label: "Angular.JS",
+    label: "Angular",
     icon: <Image preview={false} width={45} height={45} src={AngularJS} />,
     children: [
       {
         key: "angulartask",
-        label: "Задачи",
+        label: "Tasks",
       },
-      { key: "angularquestion", label: "Вопросы" },
+      { key: "angularquestion", label: "Questions" },
     ],
-  },
-  {
-    key: "other",
-    label: "Общее",
-    icon: <Image preview={false} width={45} height={45} src={Other} />,
-  },
+  }
+  // ,
+  // {
+  //   key: "other",
+  //   label: "Общее",
+  //   icon: <Image preview={false} width={45} height={45} src={Other} />,
+  // },
 ];

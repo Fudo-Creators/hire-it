@@ -13,8 +13,8 @@ const App: React.FC = () => {
       <Sider />
       <Layout>
         <Header />
-        <Content>Content</Content>
-        <Footer style={{ textAlign: "center" }}>Footer</Footer>
+        {/* <Content>Content</Content> */}
+        {/* <Footer style={{ textAlign: "center" }}>Footer</Footer> */}
       </Layout>
     </Layout>
   );

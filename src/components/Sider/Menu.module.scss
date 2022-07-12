@@ -34,28 +34,39 @@ body {
     flex-direction: column;
 
     :global {
-      .ant-menu-submenu-inline {
+      li {
         border-bottom: none;
+      }
 
+      .ant-menu-submenu-inline {
         &:not(:last-child) {
           margin-bottom: 30px;
         }
       }
 
-      .ant-menu-submenu-title {
+      .ant-menu-submenu-title { //langueges items
+        padding: 0 !important; //because i needed to turn off inline styles
         display: flex;
         align-items: center;
         border-color: transparent;
         position: relative;
+        cursor: pointer;
 
         &::after {
           content: '';
           width: 30px;
           height: 1px;
           bottom: -12px;
-          left: 10px;
+          left: -5px;
           background-color: #b0bec5;
           position: absolute;
+          transition: 0.3s width;
+        }
+      }
+
+      .ant-menu-submenu-open > .ant-menu-submenu-title {
+        &::after {
+          width: 75%;
         }
       }
 
@@ -64,17 +75,38 @@ body {
         font-weight: 500;
         font-size: 19px;
         margin-left: 12px;
+        transition: 0.4s color;
+      }
+
+      .ant-menu-sub { //opening sub menu
+        transition: 0.2s height, 0.2s opacity;
+        transform: translateY(14px);
+
+        .ant-menu-item-only-child {
+          padding-left: 25px !important;
+        }
+
+        .ant-menu-item-only-child > .ant-menu-title-content { //sub menu title
+          font-size: 16px;
+          cursor: pointer;
+          font-weight: 400;
+          line-height: 2;
+
+          &:hover {
+            color: #fff;
+          }
+        }
+      }
+
+      .ant-menu-submenu-open > div > .ant-menu-title-content {
+        color: #f78c6c;
+      }
+
+      .ant-menu-hidden {
+        display: none;
       }
     }
   }
-
-  .ant-menu-title-content {
-    color: red;
-  }
-}
-
-.ant-tabs-nav {
-  display: none;
 }
 
 .links {
@@ -82,11 +114,13 @@ body {
 
   &__img {
     cursor: pointer;
-    margin-right: 5px; //need to rewrite
+    margin-right: 8px; //need to rewrite
   }
 }
 
 .navigate {
+  padding-left: 15px;
+  
   &__home {
     padding: 10px 0 10px 15px;
     border-radius: 8px;
@@ -97,6 +131,19 @@ body {
     cursor: pointer;
     position: relative;
     margin-bottom: 55px;
+    transition: 0.3s opacity;
+
+    &:hover &_title {
+      color: #ccc;
+    }
+  }
+
+  &__home_title {
+    margin-left: 5px;
+    font-size: 16px;
+    text-transform: uppercase;
+    font-weight: 400;
+    color: #fff;
   }
 
   &__home::after {
@@ -107,5 +154,13 @@ body {
     right: -9px;
     bottom: -10px;
     background-color: #b0bec5;
+  }
+
+  &__training_title {
+    color: rgba(204, 204, 204, 1);
+    display: block;
+    font-size: 14px;
+    font-weight: 500;
+    margin-bottom: 12px;
   }
 }

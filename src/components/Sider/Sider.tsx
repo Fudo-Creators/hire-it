@@ -11,8 +11,6 @@ import Vk from '../../resources/logo/vk.svg';
 import Tg from '../../resources/logo/tg.svg';
 import homeSvg from '../../resources/logo/home.svg';
 
-import stylesh from '../../App.module.sass';
-
 import { items, mainKeysMenu } from './Data.sider'; // Структура данных для сайд-бара.
 
 // Компонент бокового меню, благодаря ключам 1 порядка будет происходит редирект внутри приложения.

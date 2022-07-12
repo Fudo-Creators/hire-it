@@ -1,6 +1,6 @@
 import { tabsData } from "./Data.header"; // Структура данных для табов.
 
-import styles from "../../App.module.sass";
+import styles from "../../App.module.scss";
 import PageHeader from "../UI/PageHeader/PageHeader";
 
 import Tabs from "antd/lib/tabs";

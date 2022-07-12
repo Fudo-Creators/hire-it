@@ -1,13 +1,7 @@
 import { IItemsMenu } from '../../interfaces/interfaces';
-
 import Image from '../UI/Image/Image';
 
-import JS from '../../resources/logo/languages/js.svg';
-import TS from '../../resources/logo/languages/ts.svg';
-import ReactJS from '../../resources/logo/languages/react2.svg';
-import VueJS from '../../resources/logo/languages/vue.svg';
-import AngularJS from '../../resources/logo/languages/angular.svg';
-import Other from '../../resources/logo/languages/other.svg';
+import { AngularSvg, JsSvg, TsSvg, ReactSvg, VueSvg, OtherSvg } from '../../resources/logo/languages';
 
 export const mainKeysMenu = ['javascript', 'typescript', 'react', 'vue', 'angular', 'other'];
 
@@ -15,7 +9,7 @@ export const items: IItemsMenu[] = [
   {
     key: 'javascript',
     label: 'JavaScript',
-    icon: <Image preview={false} width={45} height={45} src={JS} />,
+    icon: <Image preview={false} width={45} height={45} src={JsSvg} />,
     children: [
       {
         key: 'jstask',
@@ -27,7 +21,7 @@ export const items: IItemsMenu[] = [
   {
     key: 'typescript',
     label: 'TypeScript',
-    icon: <Image preview={false} width={45} height={45} src={TS} />,
+    icon: <Image preview={false} width={45} height={45} src={TsSvg} />,
     children: [
       {
         key: 'tstask',
@@ -39,7 +33,7 @@ export const items: IItemsMenu[] = [
   {
     key: 'react',
     label: 'React',
-    icon: <Image preview={false} width={45} height={45} src={ReactJS} />,
+    icon: <Image preview={false} width={45} height={45} src={ReactSvg} />,
     children: [
       {
         key: 'reacttask',
@@ -51,7 +45,7 @@ export const items: IItemsMenu[] = [
   {
     key: 'vue',
     label: 'Vue',
-    icon: <Image preview={false} width={45} height={45} src={VueJS} />,
+    icon: <Image preview={false} width={45} height={45} src={VueSvg} />,
     children: [
       {
         key: 'vuetask',
@@ -63,7 +57,7 @@ export const items: IItemsMenu[] = [
   {
     key: 'angular',
     label: 'Angular',
-    icon: <Image preview={false} width={45} height={45} src={AngularJS} />,
+    icon: <Image preview={false} width={45} height={45} src={AngularSvg} />,
     children: [
       {
         key: 'angulartask',
@@ -75,7 +69,7 @@ export const items: IItemsMenu[] = [
   {
     key: 'other',
     label: 'Общее',
-    icon: <Image preview={false} width={45} height={45} src={Other} />,
+    icon: <Image preview={false} width={45} height={45} src={OtherSvg} />,
     children: [
       {
         key: 'angulartask',

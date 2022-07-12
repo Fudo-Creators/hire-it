@@ -1,10 +1,3 @@
-@import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
-
-body {
-  background-color: rgb(25, 25, 25);
-  font-family: 'Poppins', sans-serif !important;
-}
-
 .sidebar {
   background-color: #292929;
   height: 100vh;
@@ -15,6 +8,10 @@ body {
   padding: 15px 0;
   font-family: 'Poppins', sans-serif;
   font-size: 20px;
+
+  &:hover {
+    transform: translateX(0);
+  }
 
   &__top {
     margin-bottom: 75px;
@@ -43,7 +40,8 @@ body {
         }
       }
 
-      .ant-menu-submenu-title { //langueges items
+      .ant-menu-submenu-title {
+        //langueges items
         padding: 0 !important; //because i needed to turn off inline styles
         display: flex;
         align-items: center;
@@ -76,29 +74,30 @@ body {
         transition: 0.3s color;
         color: #ccc;
       }
-      
-      .ant-menu-sub { //opening sub menu
+
+      .ant-menu-sub {
+        //opening sub menu
         transition: 0.2s height, 0.2s opacity;
         transform: translateY(14px);
-        
+
         .ant-menu-item-only-child {
           padding-left: 25px !important;
           color: #c4c4c4;
         }
 
-        
-        .ant-menu-item-only-child > .ant-menu-title-content { //sub menu title
+        .ant-menu-item-only-child > .ant-menu-title-content {
+          //sub menu title
           font-size: 18px;
           cursor: pointer;
           font-weight: 400;
           line-height: 1;
-          
+
           &:hover {
             color: #fff;
           }
         }
 
-        .ant-menu-item-selected  > .ant-menu-title-content {
+        .ant-menu-item-selected > .ant-menu-title-content {
           color: #fff;
         }
       }
@@ -119,13 +118,13 @@ body {
 
   &__img {
     cursor: pointer;
-    margin-right: 8px; //need to rewrite
+    margin-right: 8px;
   }
 }
 
 .navigate {
   padding-left: 15px;
-  
+
   &__home {
     padding: 10px 0 10px 15px;
     border-radius: 8px;
@@ -137,10 +136,6 @@ body {
     position: relative;
     margin-bottom: 55px;
     transition: 0.3s opacity;
-
-    &:hover &_title {
-      color: #ccc;
-    }
   }
 
   &__home_title {
@@ -159,10 +154,12 @@ body {
     right: -9px;
     bottom: -10px;
     background-color: #b0bec5;
+    pointer-events: none;
   }
 
   &__training_title {
-    color: rgba(204, 204, 204, 1);
+    text-transform: uppercase;
+    color: #b0bec5;
     display: block;
     font-size: 14px;
     font-weight: 500;

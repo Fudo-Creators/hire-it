@@ -1,88 +1,87 @@
-import { IItemsMenu } from "../../interfaces/interfaces";
+import { IItemsMenu } from '../../interfaces/interfaces';
 
-import Image from "../UI/Image/Image";
+import Image from '../UI/Image/Image';
 
-import JS from "../../resources/logo/languages/js.svg";
-import TS from "../../resources/logo/languages/ts.svg";
-import ReactJS from "../../resources/logo/languages/react2.svg";
-import VueJS from "../../resources/logo/languages/vue.svg";
-import AngularJS from "../../resources/logo/languages/angular.svg";
-import Other from "../../resources/logo/languages/other.svg";
+import JS from '../../resources/logo/languages/js.svg';
+import TS from '../../resources/logo/languages/ts.svg';
+import ReactJS from '../../resources/logo/languages/react2.svg';
+import VueJS from '../../resources/logo/languages/vue.svg';
+import AngularJS from '../../resources/logo/languages/angular.svg';
+import Other from '../../resources/logo/languages/other.svg';
 
-export const mainKeysMenu = [
-  "javascript",
-  "typescript",
-  "react",
-  "vue",
-  "angular",
-  "other",
-];
+export const mainKeysMenu = ['javascript', 'typescript', 'react', 'vue', 'angular', 'other'];
 
 export const items: IItemsMenu[] = [
   {
-    key: "javascript",
-    label: "JavaScript",
+    key: 'javascript',
+    label: 'JavaScript',
     icon: <Image preview={false} width={45} height={45} src={JS} />,
     children: [
       {
-        key: "jstask",
-        label: "Tasks",
+        key: 'jstask',
+        label: 'Задачи',
       },
-      { key: "jsquestion", label: "Questions" },
+      { key: 'jsquestion', label: 'Вопросы' },
     ],
   },
   {
-    key: "typescript",
-    label: "TypeScript",
+    key: 'typescript',
+    label: 'TypeScript',
     icon: <Image preview={false} width={45} height={45} src={TS} />,
     children: [
       {
-        key: "tstask",
-        label: "Tasks",
+        key: 'tstask',
+        label: 'Задачи',
       },
-      { key: "tsquestion", label: "Questions" },
+      { key: 'tsquestion', label: 'Вопросы' },
     ],
   },
   {
-    key: "react",
-    label: "React",
+    key: 'react',
+    label: 'React',
     icon: <Image preview={false} width={45} height={45} src={ReactJS} />,
     children: [
       {
-        key: "reacttask",
-        label: "Tasks",
+        key: 'reacttask',
+        label: 'Задачи',
       },
-      { key: "reactquestion", label: "Questions" },
+      { key: 'reactquestion', label: 'Вопросы' },
     ],
   },
   {
-    key: "vue",
-    label: "Vue",
+    key: 'vue',
+    label: 'Vue',
     icon: <Image preview={false} width={45} height={45} src={VueJS} />,
     children: [
       {
-        key: "vuetask",
-        label: "Tasks",
+        key: 'vuetask',
+        label: 'Задачи',
       },
-      { key: "vuequestion", label: "Questions" },
+      { key: 'vuequestion', label: 'Вопросы' },
     ],
   },
   {
-    key: "angular",
-    label: "Angular",
+    key: 'angular',
+    label: 'Angular',
     icon: <Image preview={false} width={45} height={45} src={AngularJS} />,
     children: [
       {
-        key: "angulartask",
-        label: "Tasks",
+        key: 'angulartask',
+        label: 'Задачи',
       },
-      { key: "angularquestion", label: "Questions" },
+      { key: 'angularquestion', label: 'Вопросы' },
     ],
-  }
-  // ,
-  // {
-  //   key: "other",
-  //   label: "Общее",
-  //   icon: <Image preview={false} width={45} height={45} src={Other} />,
-  // },
+  },
+  {
+    key: 'other',
+    label: 'Общее',
+    icon: <Image preview={false} width={45} height={45} src={Other} />,
+    children: [
+      {
+        key: 'angulartask',
+        label: 'Задачи',
+      },
+      { key: 'angularquestion', label: 'Вопросы' },
+    ],
+  },
 ];

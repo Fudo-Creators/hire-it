@@ -1,65 +1,63 @@
-import { useCallback, useState } from "react";
+import { useCallback, useState } from 'react';
 
-import { Layout, MenuProps } from "antd";
+import { Layout, MenuProps } from 'antd';
+import Menu from '../UI/Menu/Menu';
+import Image from '../UI/Image/Image';
+import { items, mainKeysMenu } from './Data.sider'; // Структура данных для сайд-бара.
 
-import Menu from "../UI/Menu/Menu";
-import Image from "../UI/Image/Image";
-
-import Github from "../../resources/logo/github.svg";
-import Vk from "../../resources/logo/vk.svg";
-import Tg from "../../resources/logo/tg.svg";
-
-import styles from "../../App.module.sass";
-
-import { items, mainKeysMenu } from "./Data.sider"; // Структура данных для сайд-бара.
-
-// Компонент бокового меню, благодаря ключам 1 порядка будет происходит редирект внутри приложения.
+import { GithubSvg, VkSvg, TgSvg, HomeSvg } from '../../resources/logo';
+import style from './Sider.module.scss';
 
 const Sider: React.FC = () => {
   const { Sider } = Layout;
 
-  const [openKeys, setOpenKeys] = useState(["javascript"]);
+  const [openKeys, setOpenKeys] = useState(['']);
 
-  const onOpenChange: MenuProps["onOpenChange"] = useCallback(
-    (keys: any) => {
-      const latestOpenKey = keys.find(
-        (key: string) => openKeys.indexOf(key) === -1
-      );
-      if (mainKeysMenu.indexOf(latestOpenKey!) === -1) {
-        setOpenKeys(keys);
-      } else {
-        setOpenKeys(latestOpenKey ? [latestOpenKey] : []);
+  const onOpenChange: MenuProps['onOpenChange'] = useCallback(
+    (keys: [] | string[]) => {
+      if (keys) {
+        const latestOpenKey = keys.find((key: string) => openKeys.indexOf(key) === -1);
+        if (mainKeysMenu.indexOf(latestOpenKey!) === -1) {
+          setOpenKeys(keys);
+        } else {
+          setOpenKeys(latestOpenKey ? [latestOpenKey] : []);
+        }
       }
     },
-    [openKeys]
+    [openKeys],
   );
 
   return (
-    <Sider width={335} className={styles.sider}>
-      <header className={styles.header__menu}>
-        <h1 className={styles.font}>HIRE-IT</h1>
-        <a href="https://github.com/Fudo-Creators">
-          <Image
-            onClick={() => console.log("hi")}
-            preview={false}
-            width={35}
-            height={30}
-            src={Github}
-          />
-        </a>
-        <Image preview={false} width={40} height={30} src={Tg} />
-        <Image preview={false} width={40} height={30} src={Vk} />
-      </header>
-      <div className={styles.wrapper}>
-        <Menu
-          openKeys={openKeys}
-          onOpenChange={onOpenChange}
-          onClick={(e) => console.log(e.key)}
-          className={styles.sider}
-          theme="dark"
-          mode="inline"
-          items={items}
-        />
+    <Sider className={style.sidebar} width={335}>
+      <div className={style.sidebar__top}>
+        <h1>HIRE-IT</h1>
+        <div className={style.links}>
+          <Image className={style.links__img} preview={false} src={VkSvg} />
+          <Image className={style.links__img} preview={false} src={TgSvg} />
+          <Image className={style.links__img} preview={false} src={GithubSvg} />
+        </div>
+      </div>
+      <div>
+        <nav className={style.navigate}>
+          <a href='/'>
+            <div className={style.navigate__home}>
+              <img src={HomeSvg} alt='home svg' />
+              <span className={style.navigate__home_title}>home</span>
+            </div>
+          </a>
+
+          <div>
+            <span className={style.navigate__training_title}>training</span>
+
+            <Menu
+              openKeys={openKeys}
+              onOpenChange={onOpenChange}
+              className={style.sidebar__menu}
+              mode='inline'
+              items={items}
+            />
+          </div>
+        </nav>
       </div>
     </Sider>
   );

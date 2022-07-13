@@ -1,24 +1,22 @@
-import React from "react";
-import ReactDOM from "react-dom/client";
-import App from "./App";
-import { BrowserRouter, Routes, Route } from "react-router-dom";
+import React from 'react';
+import ReactDOM from 'react-dom/client';
+import App from './App';
+import { BrowserRouter, Routes, Route } from 'react-router-dom';
 
-import infoForHardWorkers from "./utils/InfoForHardWorkers";
+import infoForHardWorkers from './utils/InfoForHardWorkers';
 
-import "antd/dist/antd.min.css"; // Включает стандартные стили каждому AntD компоненту.
+// import "antd/dist/antd.min.css"; // Включает стандартные стили каждому AntD компоненту.
 
 infoForHardWorkers();
 
-const root = ReactDOM.createRoot(
-  document.getElementById("root") as HTMLElement
-);
+const root = ReactDOM.createRoot(document.getElementById('root') as HTMLElement);
 
 root.render(
   <React.StrictMode>
     <BrowserRouter>
       <Routes>
-        <Route path="/" element={<App />} />
+        <Route path='/' element={<App />} />
       </Routes>
     </BrowserRouter>
-  </React.StrictMode>
+  </React.StrictMode>,
 );

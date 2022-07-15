@@ -1,0 +1,144 @@
+.task {
+  margin-top: 20%;
+  color: #ccc;
+
+  &__inner {
+    display: flex;
+    width: 990px;
+    justify-content: space-between;
+    align-items: flex-end;
+    margin-bottom: 20px;
+  }
+
+  &__title {
+    font-size: 25px;
+    margin-bottom: 15px;
+  }
+
+  &__group {
+    display: flex;
+    flex-direction: column;
+    align-content: space-between;
+    justify-content: space-between;
+    height: 280px;
+  }
+
+  &__btn {
+    background-color: #292929;
+    border-radius: 7px;
+    border: 1px solid #000;
+    padding: 22px 0;
+    width: 400px;
+    // width: 100%;
+    // max-height: 65px;
+    font-size: 22px;
+    font-weight: 400;
+    cursor: pointer;
+    transition: 0.3s all;
+
+    &:hover {
+      color: #ffffff;
+      background-color: #414040;
+    }
+
+    & input {
+      clip: rect(0 0 0 0);
+      clip-path: inset(100%);
+      height: 1px;
+      overflow: hidden;
+      position: absolute;
+      white-space: nowrap;
+      width: 1px;
+    }
+
+    & > span:nth-child(2) {
+      display: flex;
+      justify-content: center;
+      line-height: 1;
+    }
+  }
+
+  &__code {
+    padding: 10px 0 0 15px;
+    width: 560px;
+    border-radius: 7px;
+    margin: 0;
+    height: 280px;
+    font-size: 20px;
+  }
+
+  &__confirm {
+    color: #b0bec5;
+    height: max-content;
+
+    &:hover {
+      color: #f78c6c;
+    }
+  }
+
+  &__wrapp {
+    display: flex;
+    justify-content: flex-end;
+    align-items: flex-start;
+  }
+
+  &__btns {
+    display: flex;
+    align-items: center;
+  }
+
+  &__show_spoiler {
+    cursor: pointer;
+    margin-right: 10px;
+    font-size: 35px;
+    transition: 0.3s color;
+
+    &:hover {
+      color: #f78c6c;
+    }
+  }
+
+  &__spoiler {
+    background-color: #292929;
+    margin-right: 50px;
+    border-radius: 7px;
+    font-weight: 400;
+    font-size: 16px;
+    padding: 20px;
+    animation-name: scrollDown;
+    animation-duration: 1s;
+  }
+}
+
+:global {
+  .task__btn__disabled {
+    pointer-events: none;
+  }
+
+  .task__btn__checked {
+    background-color: #292929;
+    color: #ffffff;
+    background-color: #414040;
+  }
+
+  .task__btn__mistake {
+    background-color: #292929;
+    border-color: #f07178;
+    color: #f07178 !important;
+  }
+
+  .task__btn__right {
+    border-color: #c3e88d;
+    color: #c3e88d !important;
+  }
+}
+
+@keyframes scrollDown {
+  from {
+    opacity: 0;
+  }
+
+  to {
+    width: 100%;
+  }
+}

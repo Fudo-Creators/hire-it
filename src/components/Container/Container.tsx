@@ -1,9 +1,12 @@
-import React from "react";
-import styles from "../Container/Container.module.sass";
+import style from './Container.module.scss';
+import { ReactNode } from 'react';
+
 interface ContainerProps {
-  children: React.ReactNode;
+  content: ReactNode;
 }
-const Container = (props: ContainerProps) => {
-  return <div className={styles.container}>{props.children}</div>;
-};
+
+function Container({ content }: ContainerProps) {
+  return <div className={style.container}>{content}</div>;
+}
+
 export default Container;

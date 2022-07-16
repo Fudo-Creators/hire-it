@@ -1,48 +1,34 @@
-import { Divider, Image, Menu } from "antd";
-import { useNavigate } from "react-router-dom";
-import styles from "../Header/Header.module.sass";
-import mainLogo from "../../resources/logo/HI-IT.png";
-import menuStructure from "./menuStructure";
-import "antd/dist/antd.min.css";
-import { useState } from "react";
+import { tabsData } from "./Data.header"; // Структура данных для табов.
 
-const Header = () => {
-  let navigate = useNavigate();
-  //co[current, setCurrent] = useState("mail");
+import styles from "../../App.module.scss";
+import PageHeader from "../UI/PageHeader/PageHeader";
+
+import Tabs from "antd/lib/tabs";
+//import Tabs from "../UI/Tabs/Tabs";
+
+// Компонент хедера.
+
+
+const { TabPane } = Tabs;
+
+const Header: React.FC = () => {
+  const onChange = (key: string) => {
+    console.log(key);
+  };
   return (
-    <>
-      <header>
-        <div className={styles.wrapperImages}>
-          <div className={styles.wrapperImages}>
-            <div className={styles.logo}>
-              <Image height={75} width={75} preview={false} src={mainLogo} />
-            </div>
-            <div className={styles.logo}>
-              <a href="https://github.com/Fudo-Creators">
-                <Image
-                  height={75}
-                  width={75}
-                  preview={false}
-                  src="https://cdn-icons-png.flaticon.com/512/25/25231.png"
-                />
-              </a>
-            </div>
-          </div>
-          <div className={styles.info}>
-            Вопросы и задачи к собеседованиям Frontend-Devs😏
-          </div>
-        </div>
-        <Divider className={styles.superPuperDivider} />
-        <div>
-          <Menu
-            onClick={(e) => navigate(e.key)}
-            //selectedKeys={[current]}
-            mode="horizontal"
-            items={menuStructure}
-          />
-        </div>
-      </header>
-    </>
+    <PageHeader
+      className={`${styles.header} ${styles.font}`}
+      title={
+        <>
+          <Tabs onChange={onChange}>
+            {tabsData.map((item: string | JSX.Element, i: number) => (
+              <TabPane tab={item} key={i}></TabPane>
+            ))}
+          </Tabs>
+        </>
+      }
+    ></PageHeader>
   );
-};;;
+};
+
 export default Header;

@@ -1,0 +1,146 @@
+@import '../../scss/variables';
+
+.task {
+  margin-top: 20%;
+  color: #ccc;
+
+  &__inner {
+    display: flex;
+    width: 990px;
+    justify-content: space-between;
+    align-items: flex-end;
+    margin-bottom: 20px;
+  }
+
+  &__title {
+    font-size: 25px;
+    margin-bottom: 15px;
+  }
+
+  &__group {
+    display: flex;
+    flex-direction: column;
+    align-content: space-between;
+    justify-content: space-between;
+    height: 280px;
+  }
+
+  &__btn {
+    background-color: $main-dark;
+    border-radius: 7px;
+    border: 1px solid #000;
+    padding: 22px 0;
+    width: 400px;
+    font-size: 22px;
+    font-weight: 400;
+    cursor: pointer;
+    transition: 0.3s all;
+
+    &:hover {
+      color: #ffffff;
+      background-color: $light-dark;
+    }
+
+    & input {
+      clip: rect(0 0 0 0);
+      clip-path: inset(100%);
+      height: 1px;
+      overflow: hidden;
+      position: absolute;
+      white-space: nowrap;
+      width: 1px;
+    }
+
+    & > span:nth-child(2) {
+      display: flex;
+      justify-content: center;
+      line-height: 1;
+    }
+  }
+
+  &__code {
+    padding: 10px 0 0 15px;
+    width: 560px;
+    border-radius: 7px;
+    margin: 0;
+    height: 280px;
+    font-size: 20px;
+  }
+
+  &__confirm {
+    color: #b0bec5;
+    height: max-content;
+
+    &:hover {
+      color: $gold;
+    }
+  }
+
+  &__wrapp {
+    display: flex;
+    justify-content: flex-end;
+    align-items: flex-start;
+  }
+
+  &__btns {
+    display: flex;
+    align-items: center;
+  }
+
+  &__show_spoiler {
+    cursor: pointer;
+    margin-right: 10px;
+    font-size: 35px;
+    transition: 0.3s color;
+
+    &:hover {
+      color: $gold;
+    }
+  }
+
+  &__spoiler {
+    background-color: $main-dark;
+    margin-right: 50px;
+    border-radius: 7px;
+    font-weight: 400;
+    font-size: 16px;
+    padding: 20px;
+    animation-name: scrollDown;
+    animation-duration: 1s;
+  }
+}
+
+:global {
+  .task__btn {
+    &__disabled {
+      pointer-events: none;
+    }
+
+    &__checked {
+      color: #ffffff;
+      background-color: $light-dark;
+    }
+
+    &__mistake {
+      background-color: $main-dark;
+      border-color: $error;
+      color: $error;
+    }
+
+    &__right {
+      background-color: $main-dark;
+      border-color: $success;
+      color: $success;
+    }
+  }
+}
+
+@keyframes scrollDown {
+  from {
+    opacity: 0;
+  }
+
+  to {
+    width: 100%;
+  }
+}

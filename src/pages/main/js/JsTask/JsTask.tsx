@@ -168,7 +168,7 @@ sayHi();`,
   ];
 
   const tasks = JsTasks.map((item, index) => {
-    return <Task index={index} questions={item} />;
+    return <Task key={index} questions={item} />;
   });
 
   return (

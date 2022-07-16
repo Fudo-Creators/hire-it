@@ -6,49 +6,38 @@ import SyntaxHighlighter from 'react-syntax-highlighter';
 import { darcula } from 'react-syntax-highlighter/dist/esm/styles/hljs';
 import clsx from 'clsx';
 
+import { IQuestion } from '../../interfaces/interfaces';
 import styles from './Task.module.scss';
 
-type Questions = {
-  answers: string[],
-  code: string;
-  key: string;
-  spoiler: string;
-  title: string;
-  type: string[];
-}
-
 type Props = {
-  questions: Questions;
-  index: number;
-}
+  questions: IQuestion;
+  key: number;
+};
 
-const Task = ({questions}: Props) => {
+const Task = ({ questions }: Props) => {
   const { title, code, answers, key, spoiler } = questions; //data
+  const { Meta } = Card;
+
   const [value, setValue] = useState<string>(); //current value
   const [machupAnswers, setMachupAnswers] = useState<Array<string>>([]);
   const [showSpoiler, setShowSpoiler] = useState<boolean>(false);
-  const [ban, setBan] = useState<boolean>(false);
-  const [success, setSuccess] = useState<boolean>(true);
+  const [closeAnswer, setCloseAnswer] = useState<boolean>(false);
+  const [isRight, setIsRight] = useState<boolean>(true);
 
-  useEffect(() => { //mashup our asnwers
+  useEffect(() => {
+    //mashup our asnwers
     const mashupAnswers = answers.sort(() => Math.random() - 0.5);
     setMachupAnswers(mashupAnswers);
-  }, [])
+  }, []);
 
   const onChange = (e: RadioChangeEvent) => {
     setValue(e.target.value);
   };
 
-  const { Meta } = Card;
-
-  function gotAnswer() {
-    if (key !== value) {
-      setSuccess(false);
-    } else {
-      setSuccess(true);
-    }
-    setBan(true);
-  }
+  const gotAnswer = () => {
+    setIsRight(key === value);
+    setCloseAnswer(true);
+  };
 
   return (
     <div className={styles.task}>
@@ -58,20 +47,22 @@ const Task = ({questions}: Props) => {
         actions={[
           <Radio.Group onChange={onChange} value={value} className={styles.task__group}>
             {machupAnswers.map((text: string) => {
-                return (
-                  <Radio
-                    className={clsx(styles.task__btn, {
-                      stylestask__btn__checked: value === text,
-                      task__btn__mistake: !success && value === text,
-                      task__btn__right: ban && text === key,
-                      task__btn__disabled: ban,
-                    })}
-                    disabled={ban}
-                    value={text}>
-                    {text}
-                  </Radio>
-                );
-              })}
+              console.log(text, value);
+
+              return (
+                <Radio
+                  className={clsx(styles.task__btn, {
+                    task__btn__checked: value === text,
+                    task__btn__mistake: !isRight && value === text,
+                    task__btn__right: closeAnswer && text === key,
+                    task__btn__disabled: closeAnswer,
+                  })}
+                  disabled={closeAnswer}
+                  value={text}>
+                  {text}
+                </Radio>
+              );
+            })}
           </Radio.Group>,
         ]}>
         <>
@@ -89,11 +80,11 @@ const Task = ({questions}: Props) => {
         {showSpoiler && <p className={styles.task__spoiler}>{spoiler}</p>}
 
         <div className={styles.task__btns}>
-          {ban && !showSpoiler ? (
+          {closeAnswer && !showSpoiler ? (
             <BulbOutlined className={styles.task__show_spoiler} onClick={() => setShowSpoiler(true)} />
           ) : null}
           <Button className={styles.task__confirm} onClick={gotAnswer} disabled={!value}>
-            {!ban ? 'ответ' : 'дальше'}
+            {!closeAnswer ? 'ответ' : 'дальше'}
           </Button>
         </div>
       </div>

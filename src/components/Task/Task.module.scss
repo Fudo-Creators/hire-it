@@ -1,3 +1,5 @@
+@import '../../scss/variables';
+
 .task {
   margin-top: 20%;
   color: #ccc;
@@ -24,13 +26,11 @@
   }
 
   &__btn {
-    background-color: #292929;
+    background-color: $main-dark;
     border-radius: 7px;
     border: 1px solid #000;
     padding: 22px 0;
     width: 400px;
-    // width: 100%;
-    // max-height: 65px;
     font-size: 22px;
     font-weight: 400;
     cursor: pointer;
@@ -38,7 +38,7 @@
 
     &:hover {
       color: #ffffff;
-      background-color: #414040;
+      background-color: $light-dark;
     }
 
     & input {
@@ -72,7 +72,7 @@
     height: max-content;
 
     &:hover {
-      color: #f78c6c;
+      color: $gold;
     }
   }
 
@@ -94,12 +94,12 @@
     transition: 0.3s color;
 
     &:hover {
-      color: #f78c6c;
+      color: $gold;
     }
   }
 
   &__spoiler {
-    background-color: #292929;
+    background-color: $main-dark;
     margin-right: 50px;
     border-radius: 7px;
     font-weight: 400;
@@ -111,25 +111,27 @@
 }
 
 :global {
-  .task__btn__disabled {
-    pointer-events: none;
-  }
+  .task__btn {
+    &__disabled {
+      pointer-events: none;
+    }
 
-  .task__btn__checked {
-    background-color: #292929;
-    color: #ffffff;
-    background-color: #414040;
-  }
+    &__checked {
+      color: #ffffff;
+      background-color: $light-dark;
+    }
 
-  .task__btn__mistake {
-    background-color: #292929;
-    border-color: #f07178;
-    color: #f07178 !important;
-  }
+    &__mistake {
+      background-color: $main-dark;
+      border-color: $error;
+      color: $error;
+    }
 
-  .task__btn__right {
-    border-color: #c3e88d;
-    color: #c3e88d !important;
+    &__right {
+      background-color: $main-dark;
+      border-color: $success;
+      color: $success;
+    }
   }
 }
 

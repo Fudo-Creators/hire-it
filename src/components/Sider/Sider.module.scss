@@ -1,5 +1,7 @@
+@import '../../scss/variables';
+
 .sidebar {
-  background-color: #292929;
+  background-color: $main-dark;
   height: 100vh;
   max-width: 335px;
   width: 100%;
@@ -55,7 +57,7 @@
           height: 1px;
           bottom: -12px;
           left: -5px;
-          background-color: #b0bec5;
+          background-color: $light-gray;
           position: absolute;
           transition: 0.3s width;
         }
@@ -103,7 +105,7 @@
       }
 
       .ant-menu-submenu-open > div > .ant-menu-title-content {
-        color: #f78c6c;
+        color: $gold;
       }
 
       .ant-menu-hidden {
@@ -153,13 +155,13 @@
     height: 1px;
     right: -9px;
     bottom: -10px;
-    background-color: #b0bec5;
+    background-color: $light-gray;
     pointer-events: none;
   }
 
   &__training_title {
     text-transform: uppercase;
-    color: #b0bec5;
+    color: $light-gray;
     display: block;
     font-size: 14px;
     font-weight: 500;

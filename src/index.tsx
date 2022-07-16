@@ -5,6 +5,8 @@ import { BrowserRouter, Routes, Route } from 'react-router-dom';
 
 import infoForHardWorkers from './utils/InfoForHardWorkers';
 
+
+
 // import "antd/dist/antd.min.css"; // Включает стандартные стили каждому AntD компоненту.
 
 infoForHardWorkers();

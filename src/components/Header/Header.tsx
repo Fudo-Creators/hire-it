@@ -8,6 +8,7 @@ import Tabs from "antd/lib/tabs";
 
 // Компонент хедера.
 
+
 const { TabPane } = Tabs;
 
 const Header: React.FC = () => {

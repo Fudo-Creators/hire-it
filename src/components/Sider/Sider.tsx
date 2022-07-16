@@ -6,6 +6,7 @@ import Image from '../UI/Image/Image';
 import { items, mainKeysMenu } from './Data.sider'; // Структура данных для сайд-бара.
 
 import { GithubSvg, VkSvg, TgSvg, HomeSvg } from '../../resources/logo';
+
 import style from './Sider.module.scss';
 
 const Sider: React.FC = () => {

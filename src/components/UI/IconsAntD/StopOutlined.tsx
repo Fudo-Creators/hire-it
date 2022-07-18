@@ -3,6 +3,6 @@ import { IconContextProps } from "@ant-design/icons/lib/components/Context";
 import { FC } from "react";
 
 export const StopOutlined: FC<IconContextProps> = (props: any) => {
-  return <AntIcons {...props} />;
+  return <AntIcons style={{ fontSize: '16px', color: '#f07178' }} />;
 };
 export default StopOutlined;

@@ -13,6 +13,12 @@ body {
   display: flex;
 }
 
+.wrapper {
+  display: block;
+  width: 100%;
+}
+
+
 :global {
   .ant-btn {
     //btn
@@ -38,4 +44,6 @@ body {
       opacity: 0.7;
     }
   }
+
+  
 }

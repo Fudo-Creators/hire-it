@@ -5,14 +5,14 @@ import StopOutlined from "../UI/IconsAntD/StopOutlined";
 export const tabsData = [
   <>
     <QuestionCircleOutlined />
-    Не решенные
+    <span className="ant-tabs-tab-text first">Не решенные</span>
   </>,
   <>
-    <CheckCircleOutlined />
-    Решенные
+    <CheckCircleOutlined/>
+    <span className="ant-tabs-tab-text second">Решенные</span>
   </>,
   <>
     <StopOutlined />
-    Ошибки
+    <span className="ant-tabs-tab-text third">Ошибки</span>
   </>,
 ];

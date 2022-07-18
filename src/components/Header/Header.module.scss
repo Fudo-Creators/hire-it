@@ -1,0 +1,82 @@
+@import '../../scss/variables';
+
+.wrapperImages {
+  margin: 5px 0 5px;
+  width: 100%;
+  display: flex;
+}
+
+.logo {
+  margin: 10px;
+  background: linear-gradient(111deg, #00fdff, #ff13ff);
+  background-size: 120% 120%;
+  animation: gradient-animation 5s ease infinite;
+  border-radius: 75px;
+}
+
+ul {
+  width: 100%;
+  justify-content: center;
+  li {
+    margin: 0 20px 0 20px;
+  }
+}
+
+.tabs {
+  background-color: #404040;
+  width: 100%;
+  height: 60px;
+
+  :global {
+    & .ant-tabs-nav-list {
+      display: flex;
+      padding: 18px 0px;
+      position: relative;
+    }
+
+    & .ant-tabs-tab {
+      margin-right: 32px;
+      cursor: pointer;
+    }
+
+    & .ant-tabs-tab:first-child {
+      margin-left: 42px;
+    }
+
+    & .ant-tabs-tab-text {
+      margin-left: 12px;
+    }
+
+    & .ant-tabs-tab-text.first {
+      color: #89ddff;
+    }
+
+    & .ant-tabs-tab-text.second {
+      color: #c3e88d;
+    }
+
+    & .ant-tabs-tab-text.third {
+      color: #f07178;
+    }
+
+    & .ant-tabs-ink-bar.ant-tabs-ink-bar-animated {
+      background-color: #89ddff;
+      height: 2px;
+      position: absolute;
+      bottom: 7px;
+      transition-duration: 0.3s;
+    }
+
+    & .ant-tabs-ink-bar.ant-tabs-ink-bar-animated.first {
+      background-color: #89ddff;
+    }
+
+    & .ant-tabs-ink-bar.ant-tabs-ink-bar-animated.second {
+      background-color: #c3e88d;
+    }
+
+    & .ant-tabs-ink-bar.ant-tabs-ink-bar-animated.third {
+      background-color: #f07178;
+    }
+  }
+}

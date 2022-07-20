@@ -3,6 +3,6 @@ import { IconContextProps } from "@ant-design/icons/lib/components/Context";
 import { FC } from "react";
 
 export const QuestionCircleOutlined: FC<IconContextProps> = (props: any) => {
-  return <AntIcons {...props} />;
+  return <AntIcons style={{ color: '#89ddff' }} {...props}/>;
 };
 export default QuestionCircleOutlined;

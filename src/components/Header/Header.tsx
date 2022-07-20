@@ -1,28 +1,36 @@
-import { tabsData } from "./Data.header"; // Структура данных для табов.
+import { useState } from "react";
 
-import styles from "../../App.module.scss";
+import { tabsData } from "./Data.header"; 
+import Tabs from "antd/lib/tabs";
 import PageHeader from "../UI/PageHeader/PageHeader";
 
-import Tabs from "antd/lib/tabs";
-//import Tabs from "../UI/Tabs/Tabs";
-
-// Компонент хедера.
-
+import clsx from "clsx";
+import styles from "../Header/Header.module.scss";
 
 const { TabPane } = Tabs;
 
 const Header: React.FC = () => {
+  const [value, setValue] = useState("0");
   const onChange = (key: string) => {
-    console.log(key);
+    setValue(key);
   };
+
   return (
     <PageHeader
-      className={`${styles.header} ${styles.font}`}
       title={
         <>
-          <Tabs onChange={onChange}>
+          <Tabs
+            className={clsx(styles.tabs, {
+              first: value === "0",
+              second: value === "1",
+              third: value === "2",
+            })}
+            onChange={onChange}
+          >
             {tabsData.map((item: string | JSX.Element, i: number) => (
-              <TabPane tab={item} key={i}></TabPane>
+              <>
+                <TabPane tab={item} key={i}></TabPane>
+              </>
             ))}
           </Tabs>
         </>

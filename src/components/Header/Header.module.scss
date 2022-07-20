@@ -1,4 +1,4 @@
-@import '../../scss/variables';
+@import "../../scss/variables";
 
 .wrapperImages {
   margin: 5px 0 5px;
@@ -66,17 +66,19 @@ ul {
       bottom: 7px;
       transition-duration: 0.3s;
     }
+  }
+}
 
-    & .ant-tabs-ink-bar.ant-tabs-ink-bar-animated.first {
-      background-color: #89ddff;
-    }
+:global {
+  .first .ant-tabs-ink-bar.ant-tabs-ink-bar-animated {
+    background-color: #89ddff;
+  }
 
-    & .ant-tabs-ink-bar.ant-tabs-ink-bar-animated.second {
-      background-color: #c3e88d;
-    }
+  .second .ant-tabs-ink-bar.ant-tabs-ink-bar-animated {
+    background-color: #c3e88d;
+  }
 
-    & .ant-tabs-ink-bar.ant-tabs-ink-bar-animated.third {
-      background-color: #f07178;
-    }
+  .third .ant-tabs-ink-bar.ant-tabs-ink-bar-animated {
+    background-color: #f07178;
   }
 }

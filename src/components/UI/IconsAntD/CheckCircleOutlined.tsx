@@ -3,6 +3,6 @@ import { IconContextProps } from "@ant-design/icons/lib/components/Context";
 import { FC } from "react";
 
 export const CheckCircleOutlined: FC<IconContextProps> = (props: any) => {
-  return <AntIcons  style={{ fontSize: '16px', color: '#c3e88d' }}  />;
+  return <AntIcons  style={{ color: '#c3e88d' }}  />;
 };
 export default CheckCircleOutlined;

@@ -9,13 +9,19 @@ body {
   font-weight: 500;
 }
 
+html {
+  height: 100%;
+}
+
 .wrapp {
   display: flex;
 }
 
 .container {
-  display: block;
   width: 100%;
+  min-height: 100%;
+  display: grid;
+  grid-template-rows: auto 1fr auto;
 }
 
 

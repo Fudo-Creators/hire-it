@@ -4,10 +4,9 @@ import { Layout } from "antd";
 import Sider from "./components/Sider/Sider";
 import Header from "./components/Header/Header";
 import JsTasks from "./pages/main/js/JsTask/JsTask";
+import Footer from "./components/Footer/Footer";
 
 import styles from "./scss/App.module.scss";
-
-const { Footer, Content } = Layout;
 
 const App: React.FC = () => {
   return (
@@ -16,8 +15,8 @@ const App: React.FC = () => {
       <div className={styles.container}>
         <Header />
         <JsTasks />
+        <Footer />
       </div>
-      {/* <Footer style={{ textAlign: "center" }}>Footer</Footer> */}
     </Layout>
   );
 };

@@ -4,7 +4,7 @@ import Header from "../../../components/Header/Header";
 import Sider from "../../../components/Sider/Sider";
 import Layout from "../../../components/UI/Layout/Layout";
 
-import styles from "../Question/Question.module.sass";
+import styles from "../../../scss/App.module.scss";
 
 const JsQuestion = () => {
   return (

@@ -1,0 +1,28 @@
+.footer {
+  height: 32px;
+  background-color: #2a2a2a;
+  border-top: 1px solid #5f6264;
+  padding: 7px 0;
+}
+
+.footerInner {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.footerCopyright {
+  font-weight: 400;
+  font-size: 17px;
+  line-height: 17px;
+  color: #5f6264;
+}
+
+.footerLogos {
+  display: flex;
+  margin-left: 22px;
+}
+
+.footerLogo {
+  margin-right: 3.6px;
+}

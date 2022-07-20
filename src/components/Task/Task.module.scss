@@ -1,8 +1,8 @@
 @import '../../scss/variables';
 
 .task {
-  margin-top: 20%;
-  color: #ccc;
+  color: $main-text;
+  margin-top: -10%;
 
   &__inner {
     display: flex;
@@ -65,6 +65,7 @@
     margin: 0;
     height: 280px;
     font-size: 20px;
+    background-color: $main-dark !important;
   }
 
   &__confirm {

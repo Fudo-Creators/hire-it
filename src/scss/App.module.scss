@@ -19,18 +19,18 @@ html {
 
 .container {
   width: 100%;
-  min-height: 100%;
-  display: grid;
-  grid-template-rows: auto 1fr auto;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
 }
-
 
 :global {
   .ant-btn {
     //btn
     background-color: $main-dark;
     border: 1px solid #000;
-    color: #ccc;
+    color: $main-text;
     padding: 10px 20px;
     font-size: 20px;
     border-radius: 8px;
@@ -50,6 +50,4 @@ html {
       opacity: 0.7;
     }
   }
-
-  
 }

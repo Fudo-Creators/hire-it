@@ -2,6 +2,7 @@ import { IItemsMenu } from '../../interfaces/interfaces';
 import Image from '../UI/Image/Image';
 
 import { AngularSvg, JsSvg, TsSvg, ReactSvg, VueSvg, OtherSvg } from '../../resources/logo/languages';
+import { AntDesignOutlined } from '@ant-design/icons';
 
 export const mainKeysMenu = ['javascript', 'typescript', 'react', 'vue', 'angular', 'other'];
 
@@ -9,73 +10,103 @@ export const items: IItemsMenu[] = [
   {
     key: 'javascript',
     label: 'JavaScript',
-    icon: <Image preview={false} width={45} height={45} src={JsSvg} />,
+    icon: <Image preview={false} width={35} height={35} src={JsSvg} />,
     children: [
       {
         key: 'jstask',
         label: 'Задачи',
+        icon: <AntDesignOutlined />,
       },
-      { key: 'jsquestion', label: 'Вопросы' },
+      {
+        key: 'jsquestion',
+        label: 'Вопросы',
+        icon: <AntDesignOutlined />
+      },
     ],
   },
   {
     key: 'typescript',
     label: 'TypeScript',
-    icon: <Image preview={false} width={45} height={45} src={TsSvg} />,
+    icon: <Image preview={false} width={35} height={35} src={TsSvg} />,
     children: [
       {
         key: 'tstask',
         label: 'Задачи',
+        icon: <AntDesignOutlined />,
       },
-      { key: 'tsquestion', label: 'Вопросы' },
+      {
+        key: 'tsquestion',
+        label: 'Вопросы',
+        icon: <AntDesignOutlined />
+      },
     ],
   },
   {
     key: 'react',
     label: 'React',
-    icon: <Image preview={false} width={45} height={45} src={ReactSvg} />,
+    icon: <Image preview={false} width={35} height={35} src={ReactSvg} />,
     children: [
       {
         key: 'reacttask',
         label: 'Задачи',
+ 
+ icon: <AntDesignOutlined />,     },
+      {
+        key: 'reactquestion',
+        label: 'Вопросы',
+        icon: <AntDesignOutlined />
       },
-      { key: 'reactquestion', label: 'Вопросы' },
     ],
   },
   {
     key: 'vue',
     label: 'Vue',
-    icon: <Image preview={false} width={45} height={45} src={VueSvg} />,
+    icon: <Image preview={false} width={35} height={35} src={VueSvg} />,
     children: [
       {
         key: 'vuetask',
         label: 'Задачи',
+
+icon: <AntDesignOutlined />,      },
+      {
+        key: 'vuequestion',
+        label: 'Вопросы',
+        icon: <AntDesignOutlined />
       },
-      { key: 'vuequestion', label: 'Вопросы' },
     ],
   },
   {
     key: 'angular',
     label: 'Angular',
-    icon: <Image preview={false} width={45} height={45} src={AngularSvg} />,
+    icon: <Image preview={false} width={35} height={35} src={AngularSvg} />,
     children: [
       {
         key: 'angulartask',
         label: 'Задачи',
+ 
+ icon: <AntDesignOutlined />,     },
+      {
+        key: 'angularquestion',
+        label: 'Вопросы',
+        icon: <AntDesignOutlined />
       },
-      { key: 'angularquestion', label: 'Вопросы' },
     ],
   },
   {
     key: 'other',
     label: 'Общее',
-    icon: <Image preview={false} width={45} height={45} src={OtherSvg} />,
+    icon: <Image preview={false} width={35} height={35} src={OtherSvg} />,
     children: [
       {
         key: 'angulartask',
         label: 'Задачи',
+ 
+ icon: <AntDesignOutlined />,     },
+      {
+        key: 'angularquestion',
+        label: 'Вопросы',
+        icon: <AntDesignOutlined />
       },
-      { key: 'angularquestion', label: 'Вопросы' },
     ],
   },
 ];

@@ -29,7 +29,7 @@ const Sider: React.FC = () => {
   );
 
   return (
-    <Sider className={style.sidebar} width={335}>
+    <Sider className={style.sidebar} width={270}>
       <div className={style.sidebar__top}>
         <h1>HIRE-IT</h1>
         <div className={style.links}>

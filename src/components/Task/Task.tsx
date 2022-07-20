@@ -47,8 +47,6 @@ const Task = ({ questions }: Props) => {
         actions={[
           <Radio.Group onChange={onChange} value={value} className={styles.task__group}>
             {machupAnswers.map((text: string) => {
-              console.log(text, value);
-
               return (
                 <Radio
                   className={clsx(styles.task__btn, {

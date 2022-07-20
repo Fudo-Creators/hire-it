@@ -1,6 +1,8 @@
+@import "../../scss/variables";
+
 .footer {
   height: 32px;
-  background-color: #2a2a2a;
+  background-color: $second-dark;
   border-top: 1px solid #5f6264;
   padding: 7px 0;
 }

@@ -3,10 +3,10 @@ import React from "react";
 import { Layout } from "antd";
 import Sider from "./components/Sider/Sider";
 import Header from "./components/Header/Header";
-import JsTasks from "./pages/main/js/JsTask/JsTask";
 import Footer from "./components/Footer/Footer";
 
 import styles from "./scss/App.module.scss";
+import Container from "./components/Container/Container";
 
 const App: React.FC = () => {
   return (
@@ -14,7 +14,7 @@ const App: React.FC = () => {
       <Sider />
       <div className={styles.container}>
         <Header />
-        <JsTasks />
+        <Container content={"Добавить Home page"} />
         <Footer />
       </div>
     </Layout>

@@ -6,10 +6,11 @@ export interface IItemsMenu {
 }
 
 export interface IQuestion {
-  answers: string[];
-  code: string;
+  id?: number;
+  answers?: string[];
+  code?: string;
   key: string;
-  spoiler: string;
+  spoiler?: string;
   title: string;
-  type: string[];
+  type?: string[];
 };

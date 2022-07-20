@@ -8,16 +8,19 @@ import { items, mainKeysMenu } from './Data.sider'; // Структура дан
 import { GithubSvg, VkSvg, TgSvg, HomeSvg } from '../../resources/logo';
 
 import style from './Sider.module.scss';
+import { Link, useNavigate } from "react-router-dom";
 
 const Sider: React.FC = () => {
   const { Sider } = Layout;
+  let navigate = useNavigate();
+  const [openKeys, setOpenKeys] = useState([""]);
 
-  const [openKeys, setOpenKeys] = useState(['']);
-
-  const onOpenChange: MenuProps['onOpenChange'] = useCallback(
+  const onOpenChange: MenuProps["onOpenChange"] = useCallback(
     (keys: [] | string[]) => {
       if (keys) {
-        const latestOpenKey = keys.find((key: string) => openKeys.indexOf(key) === -1);
+        const latestOpenKey = keys.find(
+          (key: string) => openKeys.indexOf(key) === -1
+        );
         if (mainKeysMenu.indexOf(latestOpenKey!) === -1) {
           setOpenKeys(keys);
         } else {
@@ -25,7 +28,7 @@ const Sider: React.FC = () => {
         }
       }
     },
-    [openKeys],
+    [openKeys]
   );
 
   return (
@@ -40,21 +43,21 @@ const Sider: React.FC = () => {
       </div>
       <div>
         <nav className={style.navigate}>
-          <a href='/'>
+          <Link to="/">
             <div className={style.navigate__home}>
-              <img src={HomeSvg} alt='home svg' />
+              <img src={HomeSvg} alt="home svg" />
               <span className={style.navigate__home_title}>home</span>
             </div>
-          </a>
+          </Link>
 
           <div>
             <span className={style.navigate__training_title}>training</span>
-
             <Menu
+              onSelect={(item) => navigate(item.key)}
               openKeys={openKeys}
               onOpenChange={onOpenChange}
               className={style.sidebar__menu}
-              mode='inline'
+              mode="inline"
               items={items}
             />
           </div>

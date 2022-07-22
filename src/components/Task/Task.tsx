@@ -1,4 +1,5 @@
-import { useEffect, useState } from 'react';
+import { ReactNode, useEffect, useState } from 'react';
+import ReactDOM from 'react-dom';
 
 import { Radio, RadioChangeEvent, Card, Button } from 'antd';
 import { BulbOutlined } from '@ant-design/icons';
@@ -8,19 +9,26 @@ import clsx from 'clsx';
 
 import { IQuestion } from '../../interfaces/interfaces';
 import styles from './Task.module.scss';
+import usePopup from '../../hooks/usePopup';
 
 type Props = {
   questions: IQuestion;
   key: number;
 };
 
+type Portal = {
+  children: ReactNode;
+};
+
+const Portal = ({ children }: Portal) => ReactDOM.createPortal(children, document.body);
+
 const Task = ({ questions }: Props) => {
   const { title, code, answers, key, spoiler } = questions; //data
   const { Meta } = Card;
+  const { showPopup, onShowPopup } = usePopup();
 
   const [value, setValue] = useState<string>(); //current value
   const [machupAnswers, setMachupAnswers] = useState<Array<string>>([]);
-  const [showSpoiler, setShowSpoiler] = useState<boolean>(false);
   const [closeAnswer, setCloseAnswer] = useState<boolean>(false);
   const [isRight, setIsRight] = useState<boolean>(true);
 
@@ -54,6 +62,8 @@ const Task = ({ questions }: Props) => {
                     task__btn__mistake: !isRight && value === text,
                     task__btn__right: closeAnswer && text === key,
                     task__btn__disabled: closeAnswer,
+                    task__btn__medium: text.length > 27,
+                    task__btn__small: text.length > 35,
                   })}
                   disabled={closeAnswer}
                   value={text}>
@@ -75,13 +85,37 @@ const Task = ({ questions }: Props) => {
         </>
       </Card>
       <div className={styles.task__wrapp}>
-        {showSpoiler && <p className={styles.task__spoiler}>{spoiler}</p>}
+        <Portal>
+          {showPopup && (
+            <div className={`popup ${styles.task__spoiler}`}>
+              <h3 className={styles.task__spoiler_title}>Объяснение</h3>
+              <SyntaxHighlighter
+                language='javascript'
+                style={darcula}
+                className={styles.task__text}
+                wrapLines={true}
+                wrapLongLines={true}>
+                {spoiler}
+              </SyntaxHighlighter>
+              <span className={`popup__close ${styles.task__close}`}>✖</span>
+
+              <div className={styles.task__spoiler_wrapp}>
+                <Button onClick={gotAnswer} disabled={!value}>
+                  дальше
+                </Button>
+              </div>
+            </div>
+          )}
+        </Portal>
 
         <div className={styles.task__btns}>
-          {closeAnswer && !showSpoiler ? (
-            <BulbOutlined className={styles.task__show_spoiler} onClick={() => setShowSpoiler(true)} />
+          {closeAnswer && !showPopup ? (
+            <BulbOutlined
+              className={`popup__show ${styles.task__show_spoiler}`}
+              onClick={() => onShowPopup(true)}
+            />
           ) : null}
-          <Button className={styles.task__confirm} onClick={gotAnswer} disabled={!value}>
+          <Button onClick={gotAnswer} disabled={!value}>
             {!closeAnswer ? 'ответ' : 'дальше'}
           </Button>
         </div>

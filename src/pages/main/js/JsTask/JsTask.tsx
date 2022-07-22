@@ -14,15 +14,15 @@ const JsTasks = () => {
 
 sayHi();`,
       answers: [
-        'Lydia и undefined',
-        'Lydia и ReferenceError',
-        'ReferenceError и 21',
-        'undefined и ReferenceError',
+        '" Lydia Hallie", " Lydia Hallie" ("[13x whitespace]Lydia Hallie", "[2x whitespace]Lydia Hallie")',
+        '"Lydia Hallie", "Lydia Hallie"',
+        '" Lydia Hallie", "Lydia Hallie" ("[1x whitespace]Lydia Hallie", "Lydia Hallie")',
+        '"Lydia Hallie", "Lyd",',
       ],
       type: ['JavaScript', 'juniour', 'async', 'task123'],
       key: 'undefined и ReferenceError',
-      spoiler: `Внутри функции мы сперва определяем переменную name с помощью ключевого слова var. Это означает, что переменная будет поднята (область памяти под переменную будет выделена во время фазы создания) со значением undefined по умолчанию, до тех пора пока исполнение кода не дойдет до строчки, где определяется переменная. Мы еще не определили значение name когда пытаемся вывести её в консоль, поэтому в консоли будет undefined.
-      Переменные, определенные с помощью let (и const), также поднимаются, но в отличие от var, не инициализируются. Доступ к ним не возможен до тех пор, пока не выполнится строка их определения (инициализации). Это называется "временная мертвая зона". Когда мы пытаемся обратиться к переменным до того момента как они определены, JavaScript выбрасывает исключение ReferenceError.`,
+      spoiler: `Унарный плюс приводит операнд к числу. true это 1, а false это 0.
+      `,
     },
     // {
     //   title: '',

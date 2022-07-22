@@ -1,8 +1,20 @@
 @import '../../scss/variables';
 
+@keyframes fade {
+  from {
+    opacity: 0;
+  }
+
+  to {
+    opacity: 1;
+  }
+}
+
 .task {
-  margin-top: 20%;
-  color: #ccc;
+  color: $main-text;
+  margin-top: -10%;
+  animation-name: fade;
+  animation-duration: 1s;
 
   &__inner {
     display: flex;
@@ -29,6 +41,7 @@
     background-color: $main-dark;
     border-radius: 7px;
     border: 1px solid #000;
+    text-align: center;
     padding: 22px 0;
     width: 400px;
     font-size: 22px;
@@ -65,15 +78,7 @@
     margin: 0;
     height: 280px;
     font-size: 20px;
-  }
-
-  &__confirm {
-    color: #b0bec5;
-    height: max-content;
-
-    &:hover {
-      color: $gold;
-    }
+    background-color: $main-dark !important;
   }
 
   &__wrapp {
@@ -100,13 +105,75 @@
 
   &__spoiler {
     background-color: $main-dark;
-    margin-right: 50px;
+    color: $main-text;
+    width: 800px;
+    top: 45%;
+    right: 50%;
+    transform: translate(50%, -50%);
     border-radius: 7px;
     font-weight: 400;
     font-size: 16px;
-    padding: 20px;
-    animation-name: scrollDown;
+    padding: 20px 30px 20px 20px;
+    animation-name: fade;
     animation-duration: 1s;
+    min-height: 150px;
+    z-index: 2;
+    position: absolute;
+  }
+
+  &__text {
+    z-index: 1;
+    font-family: 'Poppins', sans-serif !important;
+    font-size: 19px;
+    background-color: transparent !important;
+    overflow-x: hidden !important;
+    overflow-y: auto !important;
+    padding: 0px !important;
+    padding-right: 15px !important;
+    max-height: 600px;
+
+    & span {
+      font-family: 'Poppins', sans-serif !important;
+    }
+  }
+
+  &__spoiler_title {
+    font-size: 30px;
+    margin: 0 auto;
+    color: $light-gray;
+    width: 100%;
+    margin-bottom: 20px;
+    line-height: 1;
+    position: relative;
+
+    &::after {
+      content: '';
+      position: absolute;
+      bottom: -5px;
+      width: 100px;
+      height: 1px;
+      left: 0;
+      background-color: $light-gray;
+    }
+  }
+
+  &__close {
+    color: $light-gray;
+    font-size: 35px;
+    position: absolute;
+    right: 20px;
+    top: 5px;
+    cursor: pointer;
+    transition: 0.4s color;
+
+    &:hover {
+      color: $gold;
+    }
+  }
+
+  &__spoiler_wrapp {
+    display: flex;
+    justify-content: flex-end;
   }
 }
 
@@ -132,15 +199,19 @@
       border-color: $success;
       color: $success;
     }
-  }
-}
 
-@keyframes scrollDown {
-  from {
-    opacity: 0;
+    &__medium {
+      font-size: 19px;
+    }
+
+    &__small {
+      font-size: 15px;
+    }
   }
 
-  to {
-    width: 100%;
+  .task__title {
+    &__medium {
+      font-size: 20px !important;
+    }
   }
 }

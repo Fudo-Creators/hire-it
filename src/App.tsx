@@ -1,3 +1,5 @@
+import styles from "./scss/App.module.scss";
+
 import React from "react";
 
 import { Layout } from "antd";
@@ -5,7 +7,6 @@ import Sider from "./components/Sider/Sider";
 import Header from "./components/Header/Header";
 import Footer from "./components/Footer/Footer";
 
-import styles from "./scss/App.module.scss";
 import Container from "./components/Container/Container";
 
 const App: React.FC = () => {

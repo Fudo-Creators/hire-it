@@ -1,3 +1,5 @@
+@import 'variables';
+
 html {
   box-sizing: border-box;
 }
@@ -60,4 +62,19 @@ textarea,
 select {
   font: inherit;
   letter-spacing: inherit;
+}
+
+*::-webkit-scrollbar {
+  width: 6px;
+  height: 6px;
+}
+
+*::-webkit-scrollbar-thumb {
+  border-radius: 10px;
+  background-color: $light-dark;
+}
+
+*::-webkit-scrollbar-track {
+  border-radius: 10px;
+  background-color: $light-gray;
 }

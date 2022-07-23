@@ -5,28 +5,27 @@ import { IQuestion } from "../../interfaces/interfaces";
 
 import Loader from "../UI/Loader/Loader";
 import { BulbOutlined } from "@ant-design/icons";
-import { Button } from "antd";
 import { darcula } from "react-syntax-highlighter/dist/esm/styles/hljs";
 import SyntaxHighlighter from "react-syntax-highlighter";
+import Button from "../UI/Button/Button";
 
 import styles from "../Question/Question.module.scss";
 
 const Question: React.FC = (props: any) => {
-  const [isLoaded, setIsLoaded] = useState<boolean>(false);
+  const [isLoading, setIsLoading] = useState<boolean>(false);
   const { showPopup, setShowPopup, Portal } = usePopup();
   const [data, setData] = useState<IQuestion | any>();
   const [questionUpdate, setQuestionUpdate] = useState<number>(0);
 
   useEffect(() => {
-    setIsLoaded(false);
+    setIsLoading(false);
     getQuestion(questionUpdate)
       .then((res) => {
         setData(res);
-        setIsLoaded(true);
+        setIsLoading(true);
       })
       .catch(() => {
-        console.log("Bro, somethink wrong:(");
-        setIsLoaded(false);
+        setIsLoading(false);
       });
   }, [questionUpdate]);
 
@@ -35,7 +34,7 @@ const Question: React.FC = (props: any) => {
     return randInt;
   };
 
-  return isLoaded ? (
+  return isLoading ? (
     <div className={styles.wrapper__default}>
       <h1 className={styles.question__title}>
         {data.title}

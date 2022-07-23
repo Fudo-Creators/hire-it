@@ -1,6 +1,7 @@
 import { useEffect, useState } from 'react';
 
-import { Radio, RadioChangeEvent, Card, Button } from 'antd';
+import { Radio, RadioChangeEvent, Card} from 'antd';
+import Button from "../UI/Button/Button";
 import { BulbOutlined } from '@ant-design/icons';
 import SyntaxHighlighter from 'react-syntax-highlighter';
 import { darcula } from 'react-syntax-highlighter/dist/esm/styles/hljs';
@@ -25,7 +26,6 @@ const Task: React.FC = () => {
   const [isLoading, setIsLoading] = useState(false);
 
   useEffect(() => {
-    // Вызов метода api с данными.
     getTask(taskUpdate)
       .then((res) => {
         setData(res);
@@ -34,7 +34,6 @@ const Task: React.FC = () => {
         setIsLoading(true);
       })
       .catch(() => {
-        console.log('Bro, somethink wrong:(');
         setIsLoading(false);
       });
   }, [taskUpdate]);

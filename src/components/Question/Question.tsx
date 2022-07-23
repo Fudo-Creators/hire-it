@@ -4,14 +4,15 @@ import { getQuestion } from "../../api/api";
 import { IQuestion } from "../../interfaces/interfaces";
 
 import Loader from "../UI/Loader/Loader";
-import { BulbOutlined } from "@ant-design/icons";
+
 import { darcula } from "react-syntax-highlighter/dist/esm/styles/hljs";
 import SyntaxHighlighter from "react-syntax-highlighter";
 import Button from "../UI/Button/Button";
 
 import styles from "../Question/Question.module.scss";
+import BulbOutlined from "../UI/IconsAntD/BulbOutlined";
 
-const Question: React.FC = (props: any) => {
+const Question: React.FC = () => {
   const [isLoading, setIsLoading] = useState<boolean>(false);
   const { showPopup, setShowPopup, Portal } = usePopup();
   const [data, setData] = useState<IQuestion | any>();
@@ -69,6 +70,7 @@ const Question: React.FC = (props: any) => {
       ) : null}
       <div className={styles.question__btns}>
         <BulbOutlined
+          //@ts-ignore
           className="question__btns__bulb"
           onClick={() => setShowPopup(true)}
         />

@@ -14,10 +14,11 @@ import styles from "../Question/Question.module.scss";
 const Question: React.FC = (props: any) => {
   const [isLoaded, setIsLoaded] = useState<boolean>(false);
   const { showPopup, setShowPopup, Portal } = usePopup();
-  const [data, setData] = useState<any>();
+  const [data, setData] = useState<IQuestion | any>();
   const [questionUpdate, setQuestionUpdate] = useState<number>(0);
 
   useEffect(() => {
+    setIsLoaded(false);
     getQuestion(questionUpdate)
       .then((res) => {
         setData(res);
@@ -72,7 +73,11 @@ const Question: React.FC = (props: any) => {
           className="question__btns__bulb"
           onClick={() => setShowPopup(true)}
         />
-        <Button onClick={() => setQuestionUpdate(generateRandInt)}>
+        <Button
+          onClick={() => {
+            setQuestionUpdate(generateRandInt);
+          }}
+        >
           дальше
         </Button>
       </div>

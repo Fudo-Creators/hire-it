@@ -1,0 +1,139 @@
+@import "../../scss/variables";
+
+@keyframes fade {
+  from {
+    opacity: 0;
+  }
+
+  to {
+    opacity: 1;
+  }
+}
+
+
+.question__title {
+  font-style: normal;
+  font-weight: 400;
+  font-size: 37.22px;
+  line-height: 44px;
+  text-align: center;
+  color: $main-text;
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+  margin-bottom: 54px;
+}
+
+.question__title__line {
+  width: 63%;
+  border-radius: 3px;
+  height: 2px;
+  background-color: $light-dark;
+  margin-top: 19px;
+}
+
+.question__btns {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: flex-end;
+}
+
+.answer {
+  &__container {
+    background-color: $main-dark;
+    color: $main-text;
+    width: 800px;
+    top: 45%;
+    right: 50%;
+    transform: translate(50%, -50%);
+    border-radius: 7px;
+    font-weight: 400;
+    font-size: 16px;
+    padding: 20px 30px 20px 20px;
+    animation-name: fade;
+    animation-duration: 1s;
+    min-height: 150px;
+    z-index: 2;
+    position: absolute;
+  }
+
+  &__next {
+    display: flex;
+    justify-content: flex-end;
+  }
+
+  &__close {
+    color: $light-gray;
+    font-size: 35px;
+    position: absolute;
+    right: 20px;
+    top: 5px;
+    cursor: pointer;
+    transition: 0.4s color;
+  
+    &:hover {
+      color: $gold;
+    }
+  }
+
+  &__title {
+    font-size: 30px;
+    margin: 0 auto;
+    color: $light-gray;
+    width: 100%;
+    margin-bottom: 20px;
+    line-height: 1;
+    position: relative;
+
+    &::after {
+      content: '';
+      position: absolute;
+      bottom: -5px;
+      width: 100px;
+      height: 1px;
+      left: 0;
+      background-color: $light-gray;
+    }
+  }
+  &__text {
+    z-index: 1;
+    font-family: 'Poppins', sans-serif !important;
+    font-size: 19px;
+    background-color: transparent !important;
+    overflow-x: hidden !important;
+    overflow-y: auto !important;
+    padding: 0px !important;
+    padding-right: 15px !important;
+    max-height: 600px;
+
+    & span {
+      font-family: 'Poppins', sans-serif !important;
+    }
+  }
+}
+
+
+
+
+
+
+:global {
+  .question__btns {
+    &__bulb {
+      font-size: 35px;
+      margin: 0 auto;
+      color: $light-gray;
+      width: 100%;
+      line-height: 1;
+      margin: 0;
+      width: auto;
+      margin-right: 10px;
+      cursor: pointer;
+      transition: 0.3s color;
+      &:hover {
+        color: $gold;
+      }
+    }
+  }
+}
